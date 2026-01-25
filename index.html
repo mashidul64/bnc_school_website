@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</title>
+  <meta name="description" content="Example School - বিদ্যালয় ওয়েবসাইট" />
+  <style>
+  
+  
+    /* ====== Reset & basics ====== */
+    :root{
+      --primary:#0b6cf0;
+      --accent:#ffb400;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f4f7fb;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:#111}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+	
+	section {
+    min-height: 50vh; /* পুরো ভিউপোর্ট উচ্চতা */
+    display: flex;      /* content vertically & horizontally center করার জন্য */
+    flex-direction: column; /* content top থেকে নিচ পর্যন্ত হলে column */
+    justify-content: center; /* vertical center */
+    padding: 0 20px;   /* left-right spacing */
+}
+
+
+    /* ====== Header / Nav ====== */
+	
+	/* Header সব সময় উপরে থাকবে */
+	header {
+    position: sticky;   /* অথবা fixed করলে সবসময় top এ থাকবে */
+    top: 0;
+    z-index: 2000;      /* modal এর উপরে না হলেও সর্বদা উপরে থাকবে */
+    background: linear-gradient(90deg, var(--primary), #3aa0ff);
+	}
+    header{background:linear-gradient(90deg,var(--primary),#3aa0ff);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:50;box-shadow:0 4px 12px rgba(11,108,240,0.08)}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .nav{display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:18px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;margin-left:auto}
+    nav li{padding:8px 12px;border-radius:8px}
+    nav li a{color:#fff;font-weight:600}
+    .cta{background:var(--accent);color:#111;padding:8px 12px;border-radius:8px;font-weight:700}
+	
+	header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+main {
+    margin-top: 0px; /* header height অনুযায়ী */
+}
+
+nav ul li a {
+    transition: color 0.3s, background 0.3s; /* smooth effect */
+    padding: 3px 3px;
+    border-radius: 6px;
+}
+
+/* Mouse hover effect */
+nav ul li a:hover {
+    background-color: var(--accent); /* তুমি চাইলে অন্য color দিতে পারো */
+    color: #111; /* text color */
+}
+
+
+/* স্লাইডার অপশন শুরু========== */
+
+.top-slider{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.top-slider img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.top-slider img.active{
+  opacity: 1;
+}
+
+/* dots indicator */
+.dots{
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dots span{
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.dots span.active{
+  background: #fff;
+  transform: scale(1.4);
+}
+
+/* Dark overlay effect */
+.top-slider::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+  z-index:1;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top: 20px;
+  text-align:center;
+  color:#fff;
+  padding:20px;
+}
+
+.hero-overlay h1{
+  font-size: clamp(26px, 4vw, 44px);
+  margin-bottom:10px;
+}
+
+.hero-overlay p{
+  font-size: 18px;
+  margin-bottom:18px;
+  opacity:0.9;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:12px 26px;
+  background: var(--accent);
+  color:#111;
+  font-weight:700;
+  border-radius:30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* স্লাইডার অপশন শেষ========== */
+
+	
+	
+
+    /* ====== Hero ====== */
+    .hero{padding:40px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:22px;border-radius:16px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+    .hero h1{font-size:30px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 16px}
+    .stats{display:flex;gap:12px}
+    .stat{background:#fff;padding:12px;border-radius:10px;min-width:110px;text-align:center}
+    .stat b{display:block;font-size:18px}
+	
+	
+	.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,24,48,0.06);
+  text-align: left; /* ছবির নিচের লেখা সেন্টারে */
+}
+
+.card-img {
+  width: 100%;
+  height: 200px; /* চাইলে adjust করো */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+	
+	
+
+	
+	
+	
+
+    /* ====== Sections ====== */
+    section{padding:28px 0}
+    .grid{display:grid;gap:14px}
+    .two-col{grid-template-columns:1fr 360px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,48,0.06)}
+
+    /* ====== Teachers list ====== */
+    .teacher{display:flex;gap:12px;align-items:center}
+    .teacher .avatar{width:58px;height:58px;border-radius:10px;background:linear-gradient(45deg,var(--primary),#7bc7ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+    /* ====== Noticeboard ====== */
+    .notice{padding:12px;border-radius:10px;background:linear-gradient(90deg,#fff,#fbfcff);border-left:4px solid var(--primary)}
+    .notice small{color:var(--muted)}
+
+   
+
+    /* ====== Contact ====== */
+    .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:16px}
+    form .row{display:flex;gap:10px}
+    input,textarea,select{width:100%;padding:10px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+    button{background:var(--primary);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
+
+    /* ====== Footer ====== */
+    footer{padding:20px 0;color:var(--muted)}
+
+    /* ====== Responsive ====== */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+       nav ul{display:none}
+      .two-col{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+	
+	
+	 /* ====== Gallery ====== */
+	
+	 body{font-family: sans-serif; margin:20px; background:#f5f5f5;}
+  h2{text-align:left; margin-bottom:20px;}
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    gap:10px;
+  }
+  .gallery img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    cursor:pointer;
+    border-radius:8px;
+    transition: transform 0.2s;
+  }
+  
+  
+  .gallery img:hover {
+    transform: scale(2); /* ডাবল সাইজ */
+    z-index: 10;          /* অন্য ছবির উপরে দেখানোর জন্য */
+    position: relative;    /* z-index কাজ করার জন্য */
+}
+
+
+  /* Modal */
+  #imageModal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.8);
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+  }
+  #imageModal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+  }
+  #imageModal span{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+  }
+	
+	
+	
+  </style>
+</head>
+<body>
+
+
+
+
+<!-- Main Heading -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">
+    <img src="images/logo.png" alt="School Logo"
+         style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+</div>
+        <div>
+          <div style="font-size:16px">বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</div>
+          <small style="color:rgba(255,255,255,0.9)">Knowledge, Character, Service</small>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academic">Academic</a></li>
+          <li><a href="#admission">Admission</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#admission">Apply Now</a>
+    </div>
+  </header>
+  
+  
+  <!-- TOP SLIDER -->
+<section class="top-slider">
+  <div class="slides">
+    <img src="images/gallery1.jpg" class="active">
+    <img src="images/gallery2.jpg">
+    <img src="images/gallery3.jpg">
+  </div>
+
+  <button class="nav prev" onclick="prevSlide()">❮</button>
+  <button class="nav next" onclick="nextSlide()">❯</button>
+  
+   <!-- HERO CONTENT -->
+  <div class="hero-overlay">
+    <h1>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</h1>
+    <p>জ্ঞান • চরিত্র • সেবা</p>
+    <a href="#admission" class="hero-btn">ভর্তি চলছে</a>
+  </div>
+  
+  
+   <!-- dots -->
+  <div class="dots"></div>
+  
+</section>
+
+
+ 
+
+
+  
+ 
+<!-- Main Design Section -->
+  <main class="container" id="home">
+  
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Welcome to Our School </h1>
+        <p>আপনার সন্তানের সেরা শিক্ষাজীবনের জন্য আধুনিক শিক্ষা, উন্নত পরিকাঠামো এবং অভিজ্ঞ শিক্ষককোষ।</p>
+        <div class="stats">
+          <div class="stat"><b>১২০০+</b><small>শিক্ষার্থী</small></div>
+          <div class="stat"><b>২৫</b><small>শিক্ষক</small></div>
+          <div class="stat"><b>১২</b><small>শিক্ষা বিভাগ</small></div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:8px">
+          <a href="#admission" class="cta">Admission</a>
+          <a href="#contact" style="padding:10px 12px;border-radius:10px;background:#fff;color:#111; font-weight:700">Contact</a>
+        </div>
+      </div>
+	  
+
+      <aside>
+        <div class="card">
+          <h3>নোটিশ বোর্ড</h3>
+          <div id="notices">
+            <div class="notice"><small>৩০ ডিসেম্বর ২০২৫</small><div><strong>জুনিয়র বৃত্তি পরীক্ষা-২০২৫ স্থগিত</strong><p>আগামীকালের জুনিয়র বৃত্তি পরীক্ষা-২০২৫ স্থগিত উক্ত পরীক্ষা আগামী ০৫/০১/২০২৬ খ্রিঃ তারিখ রোজ সোমবার অনুষ্ঠিত হবে।</p></div></div>
+			
+            <div class="notice"><small>২০ ডিসেম্বর ২০২৫</small><div><strong>ভর্তি চলছে</strong><p>বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়ে-২০২৬ শিক্ষাবর্ষে ৬ষ্ঠ থেকে ৯ম শ্রেণি পর্যন্ত ছাত্র/ছাত্রী ভর্তি চলছে। সকাল ১০টা থেকে দুপুর ২টার মধ্যে অফিস কক্ষ হতে ভর্তি ফরম সংগ্রহ করতে পারবেন। </p></div></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+	
+	
+
+    <section id="about">
+      <div class="grid two-col">
+        <div>
+          <h2>About Us </h2>
+		  
+		  
+		  
+		  <p style="text-align: justify;" > <b>ইতিহাস:</b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় বাংলাদেশের চট্টগ্রাম বিভাগের চট্টগ্রাম জেলার ফটিকছড়ি উপজেলায় অবস্থিত একটি বেসরকারি উচ্চ মাধ্যমিক বিদ্যালয় । স্কুলটি ২০১৮ সালে বাংলাদেশ সেনাবাহিনী এবং স্থানীয়দের অগ্রগামী ভুমিকার জন্য প্রতিষ্ঠিত হয়েছিল । বিদ্যালয়টি গত ২৯ অক্টোবর ২০১৮ তারিখে প্রতিষ্ঠিত হয়। প্রাথমিকভাবে ৩৮৭ জন শিক্ষার্থী, ১ জন প্রধান শিক্ষক এবং ৮ জন সহকারী শিক্ষক নিয়ে শুরু হয়েছিল । প্রতিষ্ঠার পর হতে এখন পর্যন্ত মানসম্মত শিক্ষা প্রদান করে আসছে। </p>
+		  
+          
+          <p style="text-align: justify;" ><b>ভিশন:</b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টিকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় হওয়ার প্রচেষ্টা করা, যেখানে পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে উঠবে এবং সমাজে অর্থপূর্ণ অবদান রাখবে।</p>
+		  
+          <div class="cards">
+			<div class="card">
+			<img src="images/z_comd.jpeg" alt="Zone Commander" class="card-img">
+			<h4>Zone Commander Message</h4>
+			<p style="text-align: justify;">সকল শিক্ষার্থীকে অনুপ্রাণিত করা এবং তাদের সৃজনশীলতাকে বিকাশ করা আমাদের প্রধান লক্ষ্য</p>
+		</div>
+
+		<div class="card">
+			<img src="images/profile.jpg" alt="Principal" class="card-img">
+			<h4>Principal Message</h4>
+			<p style="text-align: justify;">বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় এর সকল শিক্ষার্থীকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় এর ন্যায় পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে তোলায় আমাদের মুল লক্ষ্য</p>
+		</div>
+
+		<div class="card">
+			<img src="images/profile.jpg" alt="Mission" class="card-img">
+			<h4>Our Mission</h4>
+			<p style="text-align: justify;">আমাদের লক্ষ্য শিক্ষার্থীদের সার্বিক উন্নয়ন নিশ্চিত করা। কার্যকর শিক্ষাদান, সম্মান ও সৎচরিত্র গঠন।</p>
+		</div>
+	</div>
+
+		  
+		  
+        </div>
+		
+		
+		
+
+        <div class="card">
+          <h3>Teachers</h3>
+          <div style="display:grid;gap:10px;margin-top:8px">
+            <div class="teacher">
+              <div class="avatar">আ</div>
+              <div>
+                <strong>আশিকুর রহমান</strong>
+                <div style="font-size:13px;color:var(--muted)">গণিত শিক্ষক</div>
+              </div>
+            </div>
+            <div class="teacher">
+              <div class="avatar">সু</div>
+              <div>
+                <strong>সুমনা আক্তার</strong>
+                <div style="font-size:13px;color:var(--muted)">বিজ্ঞান শিক্ষক</div>
+              </div>
+            </div>
+            <div class="teacher">
+              <div class="teacher-more" style="font-size:13px;color:var(--muted);margin-top:6px">আরও শিক্ষক দেখুন</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	
+
+    <section id="academic">
+      <h2>Academic</h2>
+      <div class="grid two-col">
+        <div>
+          <div class="card">
+            <h4>Class Routine</h4>
+            <p>সকল ক্লাসের রুটিন এখানে পাওয়া যাবে </p>
+            <table style="width:100%;border-collapse:collapse;margin-top:8px">
+              <thead>
+                <tr style="text-align:left;color:var(--muted)"><th>Class</th><th>Time</th><th>Subject</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>৬ষ্ঠ শ্রেণী</td><td>১০:০০ - ১০:৪৫</td><td>বাংলা</td></tr>
+                <tr><td>সপ্তম শ্রেণী</td><td>১০:০০ - ১০:৪৫</td><td>ইংরেজি</td></tr>
+                <tr><td>অষ্টম শ্রেণী</td><td>১১:০০ - ১১:৪৫</td><td>অংক</td></tr>
+                <tr><td>নবম শ্রেণী</td><td>১২:০০ - ১২:৪৫</td><td>সাধারণ বিজ্ঞান</td></tr>
+                <tr><td>দশম শ্রেণী</td><td>০১:০০ - ০১:৪৫</td><td>ধর্ম</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <div class="card" style="flex:1">
+              <h4>Syllabus</h4>
+              <p>ক্লাসের সিলেবাস ডাউনলোড করতে পারবে (PDF)</p>
+              <button onclick="alert('ডাউনলোড ফাংশন ব্যাকএন্ড প্রয়োজন')">Download</button>
+            </div>
+
+            <div class="card" style="width:180px">
+              <h4>Results</h4>
+              <p><small>পরীক্ষার ফলাফল আপলোড করা হয়েছে</small></p>
+              <button onclick="openModal('resultsModal')">View</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h4>Upcoming Events</h4>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>বার্ষিক ক্রীড়া — ৩১ জানুয়ারি ২০২৬</li>
+            <li>সাংস্কৃতিক অনুষ্ঠান — ১৪ ফেব্রুয়ারি ২০২৬</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+	
+	
+
+    <section id="admission">
+      <h2>Admission</h2>
+      <div class="card">
+        <p>আবেদন ফি: ৫০০ টাকা (অনুগ্রহ করে ব্যাংক/অফলাইন পদ্ধতিতে জমা দিন)। নিচের ফরম পূরণ করে সরাসরি আবেদন করতে পারেন।</p>
+        <form id="admissionForm" onsubmit="submitAdmission(event)">
+          <div class="row">
+            <input type="text" id="name" placeholder="Full name" required>
+            <input type="text" id="classname" placeholder="Class to apply (e.g., ৫)" required>
+          </div>
+          <div class="row" style="margin-top:10px">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="phone" placeholder="Phone number">
+          </div>
+          <div style="margin-top:10px">
+            <textarea id="address" placeholder="Address" rows="3"></textarea>
+          </div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button type="submit">Submit Application</button>
+            <button type="button" onclick="document.getElementById('admissionForm').reset()" style="background:#eee;color:#111">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+	
+	
+
+
+   
+ <!-- Gallery Section -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/gallery1.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery2.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery3.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery4.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery5.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery6.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery7.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery8.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery9.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery10.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery11.jpg" onclick="galleryOpenImage(this.src)">
+    <img src="images/gallery12.jpg" onclick="galleryOpenImage(this.src)">
+  </div>
+
+ <div id="imageModal">
+  <span class="close" onclick="galleryCloseImage()">&times;</span>
+  <img id="modalImg">
+  <button id="prevBtn" onclick="prevImage()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:30px;color:white;background:none;border:none;cursor:pointer;">&#10094;</button>
+  <button id="nextBtn" onclick="nextImage()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:30px;color:white;background:none;border:none;cursor:pointer;">&#10095;</button>
+</div>
+ 
+</section>
+
+
+  
+
+
+
+
+
+ <!-- Contact Us শুরু এখান থেকে -->
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="card">
+            <h4>Get in touch</h4>
+            <p style="color:var(--muted)">ঠিকানা: Manikpur, Kanchannagar, Fatikchhari , Chittagong, Bangladesh, 4350<br>Phone: 01816-160539<br>Email: bmhs.edu@gmail.com</p>
+            <div style="margin-top:8px">
+			
+			<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365.0000000000001!2d91.8699853!3d22.7602624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752d73f22084861%3A0x5af7c96a1fe71efd!2sBainnachola%20Manikpur%20High%20School!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+  width="100%" height="300" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+			
+
+			  
+			  
+			  
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h4>Message us</h4>
+          <form onsubmit="sendMessage(event)">
+            <input required placeholder="Your name" id="msgName">
+            <input required placeholder="Your email" id="msgEmail">
+            <textarea required placeholder="Message" id="msgText" rows="5"></textarea>
+            <div style="margin-top:8px">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </section>
+	
+	<!-- Contact Us শেষ এখান থেকে -->
+	
+
+  </main>
+  
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:left;gap:12px;flex-wrap:wrap">
+        <div style="font-size:15px;"> &copy; <b>Bainnachola Manikpur High School</b> — 2018 - <span id="year"></span></div>
+        <div style="color:var(--muted)">Developed by: Sgt Mashidul, 32 Fd Regt Arty,Laxmichari Zone</div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Modals / Simple JS UI -->
+  <div id="imageModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:20px;z-index:120">
+    <div style="max-width:900px;width:100%">
+      <img id="modalImg" src="" style="width:100%;border-radius:8px;display:block">
+      <div style="text-align:right;margin-top:8px"><button onclick="closeImageModal()">Close</button></div>
+    </div>
+  </div>
+
+  <div id="resultsModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;padding:20px;z-index:120">
+    <div style="max-width:640px;background:white;padding:18px;border-radius:12px">
+      <h3>Latest Results</h3>
+      <p>এই অংশটি আপডেট করতে ব্যাকএন্ড দরকার। উদাহরণ উপস্থিত: ২০২৫ সালের শুধুমাত্র নমুনা ফলাফল।</p>
+      <table style="width:100%"><thead><tr><th>Student</th><th>Class</th><th>GPA</th></tr></thead><tbody><tr><td>রহিম</td><td>৫</td><td>৪.৮</td></tr></tbody></table>
+      <div style="text-align:right;margin-top:8px"><button onclick="closeModal('resultsModal')">Close</button></div>
+    </div>
+  </div>
+  
+ 
+ 
+ 
+<!-- Java Script শুরু এখান থেকে -->
+  <script>
+    
+
+   
+
+    // Admission form - since there's no backend, we'll store to localStorage as a demo
+	
+    function submitAdmission(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const cls = document.getElementById('classname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      if(!name || !cls){ alert('নাম ও ক্লাস অবশ্যই দিতে হবে'); return; }
+      const applications = JSON.parse(localStorage.getItem('applications')||'[]');
+      applications.push({name,cls,email,phone,address,submitted: new Date().toISOString()});
+      localStorage.setItem('applications', JSON.stringify(applications));
+      alert('Application submitted (demo). Admin panel যোগ করলে এখানে আপলোড হবে।');
+      e.target.reset();
+    }
+
+    // Contact message demo
+    function sendMessage(e){
+      e.preventDefault();
+      const n = document.getElementById('msgName').value.trim();
+      const em = document.getElementById('msgEmail').value.trim();
+      const tx = document.getElementById('msgText').value.trim();
+      if(!n||!em||!tx){alert('সবগুলো ফিল্ড পূরণ করুন');return}
+      const messages = JSON.parse(localStorage.getItem('messages')||'[]');
+      messages.push({n,em,tx,at:new Date().toISOString()});
+      localStorage.setItem('messages', JSON.stringify(messages));
+      alert('Message sent (demo). Admin প্যানেলে দেখুন।');
+      e.target.reset();
+    }
+	
+	const yearEl = document.getElementById("year");
+  if(yearEl){
+    yearEl.textContent = new Date().getFullYear();
+  }
+	
+	
+// ছবির কার্যক্রম এখানে শুরু ================================================
+document.addEventListener('DOMContentLoaded', function() {
+
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+
+  // =========================
+  // Gallery images list
+  const galleryImages = Array.from(document.querySelectorAll('#gallery .gallery img'));
+  let currentIndex = 0;
+  // =========================
+
+  window.galleryOpenImage = function(src){
+    currentIndex = galleryImages.findIndex(img => img.src === src);
+    modalImg.src = galleryImages[currentIndex].src;
+    modal.style.display = 'flex';
+  }
+
+  window.galleryCloseImage = function(){
+    modal.style.display = 'none';
+  }
+
+  // Click outside image to close
+  modal.addEventListener('click', function(e){
+    if(e.target === modal){
+      galleryCloseImage();
+    }
+  });
+
+  // Esc key & arrow keys
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      galleryCloseImage();
+    }
+    if(e.key === 'ArrowRight'){
+      nextImage();
+    }
+    if(e.key === 'ArrowLeft'){
+      prevImage();
+    }
+  });
+
+  // Next / Previous functions
+  window.nextImage = function(){
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+  }
+
+  window.prevImage = function(){
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+  }
+
+});
+// ছবির কার্যক্রম এখানে শেষ ================================================
+
+
+// স্লাইডার কোড এখানে শুরু ================================================
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.top-slider img');
+const dotsContainer = document.querySelector('.dots');
+
+// create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if(i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    currentSlide = i;
+    showSlide(currentSlide);
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.dots span');
+
+function showSlide(index){
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// auto slide
+setInterval(nextSlide, 5000);
+
+// স্লাইডার কোড এখানে শেষ ================================================
+
+	
+  </script>
+  
+
+
+</body>
+</html>
