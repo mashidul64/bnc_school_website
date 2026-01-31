@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+
   <title>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</title>
   <meta name="description" content="Example School - বিদ্যালয় ওয়েবসাইট" />
+  
+  
   <style>
+  
   
   
     /* ====== Reset & basics ====== */
@@ -32,10 +37,16 @@
     padding: 0 20px;   /* left-right spacing */
 }
 
+.container{
+  max-width:1200px;
+  width:100%;
+  padding: 0 15px;
+}
 
-    /* ====== Header / Nav ====== */
+
+
+    /* ====== হেডার নেভিগেশন বক্স Header / Nav ====== */
 	
-	/* Header সব সময় উপরে থাকবে */
 	header {
     position: sticky;   /* অথবা fixed করলে সবসময় top এ থাকবে */
     top: 0;
@@ -74,6 +85,11 @@ nav ul li a:hover {
     background-color: var(--accent); /* তুমি চাইলে অন্য color দিতে পারো */
     color: #111; /* text color */
 }
+
+
+/* ====== হেডার নেভিগেশন বক্স Header / Nav ====== */
+
+
 
 
 /* স্লাইডার অপশন শুরু========== */
@@ -173,9 +189,79 @@ nav ul li a:hover {
 
 /* স্লাইডার অপশন শেষ========== */
 
-	
-	
 
+
+/* নোটিশ বোর্ড শুরু ========== */	
+
+.notice-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background: #fff7ed;
+  border: 1px solid #0000ff;
+  overflow: hidden;
+}
+
+.notice-label {
+  background: #0000ff;
+  color: white;
+  font-weight: bold;
+  padding: 12px 18px;
+  white-space: nowrap;
+}
+
+.notice-track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.notice-move {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: noticeScroll 40s linear infinite;
+}
+
+.notice-move a {
+  margin-right: 40px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+
+.notice-wrapper:hover .notice-move {
+  animation-play-state: paused;
+}
+
+@keyframes noticeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+/* নোটিশ বোর্ড শেষ ========== */	
+
+
+
+
+
+/* আমাদের সাফল্য ========== */	
+	.student-img {
+  width: 100%;
+  height: 300px; /* চাইলে adjust করো */
+  object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 0px;
+}
+
+
+
+
+	
+	
+	
+/* About Section Start ইতিহাস/ মিশন/ সেকশন ========== */
     /* ====== Hero ====== */
     .hero{padding:40px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
     .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:22px;border-radius:16px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
@@ -202,29 +288,83 @@ nav ul li a:hover {
 
 .card-img {
   width: 100%;
-  height: 200px; /* চাইলে adjust করো */
+  height: 340px; /* চাইলে adjust করো */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 12px;
 }
 
-	
+/* About Section End ইতিহাস/ মিশন/ সেকশন ========== */	
 	
 
-	
-	
-	
+
+
+
 
     /* ====== Sections ====== */
-    section{padding:28px 0}
+     section{padding:28px 0}
     .grid{display:grid;gap:14px}
     .two-col{grid-template-columns:1fr 360px}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
     .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,48,0.06)}
+	
+	
 
     /* ====== Teachers list ====== */
     .teacher{display:flex;gap:12px;align-items:center}
     .teacher .avatar{width:58px;height:58px;border-radius:10px;background:linear-gradient(45deg,var(--primary),#7bc7ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+	
+	
+	
+/* ====== এ্যাডমিশন সেকশন শুরু ====== */	
+	#submitBtn {
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#submitBtn:active {
+  transform: scale(0.95);
+}
+
+#submitBtn.loading {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+#submitBtn.loading::after {
+  content: " ⏳";
+}
+
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.spinner {
+  margin-left: 8px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* ====== এ্যাডমিশন সেকশন শেষ ====== */
+
+
 
     /* ====== Noticeboard ====== */
     .notice{padding:12px;border-radius:10px;background:linear-gradient(90deg,#fff,#fbfcff);border-left:4px solid var(--primary)}
@@ -240,6 +380,8 @@ nav ul li a:hover {
 
     /* ====== Footer ====== */
     footer{padding:20px 0;color:var(--muted)}
+	
+	
 
     /* ====== Responsive ====== */
     @media (max-width:900px){
@@ -250,61 +392,262 @@ nav ul li a:hover {
     }
 	
 	
-	 /* ====== Gallery ====== */
+	 /* ====== Gallery ফটো গ্যালারী ====== */
 	
 	 body{font-family: sans-serif; margin:20px; background:#f5f5f5;}
   h2{text-align:left; margin-bottom:20px;}
 
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-    gap:10px;
+ 
+
+
+/* ===============================
+   GALLERY 2 – FULL CSS
+   =============================== */
+
+#gallery2{
+  margin:20px;
+  font-family:sans-serif;
+}
+
+#gallery2 h2{
+  margin-bottom:20px;
+}
+
+/* ===== SECTION THUMBNAILS ===== */
+
+#gallery2 .g2-sections{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+  gap:18px;
+  margin-bottom:30px;
+}
+
+#gallery2 .g2-thumb{
+  position:relative;
+  height:180px;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  background:#000;
+}
+
+#gallery2 .g2-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.4s ease;
+}
+
+/* hover zoom */
+#gallery2 .g2-thumb:hover img{
+  transform:scale(1.25);
+}
+
+/* title overlay */
+#gallery2 .g2-thumb-title{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:14px;
+  background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color:#fff;
+  font-size:17px;
+  font-weight:600;
+  text-align:center;
+  pointer-events:none;
+}
+
+/* ===== IMAGE GRID ===== */
+
+#gallery2 .g2-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(120px,1fr));
+  gap:10px;
+  margin-bottom:20px;
+}
+
+#gallery2 .g2-grid img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+  transition:transform 0.2s ease;
+}
+
+#gallery2 .g2-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== MODAL ===== */
+
+#g2-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+#g2-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+/* close button */
+#g2-modal .g2-close{
+  position:absolute;
+  top:18px;
+  right:28px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+}
+
+/* navigation buttons */
+#g2-modal .g2-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:#fff;
+  background:none;
+  border:none;
+  cursor:pointer;
+  user-select:none;
+}
+
+#g2-modal .g2-prev{
+  left:20px;
+}
+
+#g2-modal .g2-next{
+  right:20px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width:600px){
+  #gallery2 .g2-thumb{
+    height:150px;
   }
-  .gallery img{
-    width:100%;
-    height:100px;
-    object-fit:cover;
-    cursor:pointer;
-    border-radius:8px;
-    transition: transform 0.2s;
-  }
-  
-  
-  .gallery img:hover {
-    transform: scale(2); /* ডাবল সাইজ */
-    z-index: 10;          /* অন্য ছবির উপরে দেখানোর জন্য */
-    position: relative;    /* z-index কাজ করার জন্য */
 }
 
 
-  /* Modal */
-  #imageModal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.8);
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-  }
-  #imageModal img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
-  }
-  #imageModal span{
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:35px;
-    color:white;
-    cursor:pointer;
-  }
-	
+
+  
+  
+
+/* ====== গ্যালারিী শেষ  ====== */  
+  
+ 
+  
+/* ====== মেসেজ বাটন শুরু  ====== */  
+  
+  #messageBtn {
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#messageBtn:active {
+  transform: scale(0.95);
+}
+
+#messageBtn.loading {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+#messageBtn.loading::after {
+  content: " ⏳";
+}
+/* ====== মেসেজ বাটন শেষ ====== */  
+
+
+
+/* ====== ডাউনলোড সিলেবাস বাটন শুরু  ====== */  
+	.download-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.download-btn:hover {
+  background: #1e40af;
+}
+
+.download-btn:active {
+  transform: scale(0.95);
+}
+
+
+.result-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.result-btn:hover {
+  background: #1e40af;
+}
+
+.result-btn:active {
+  transform: scale(0.95);
+}
+
+/* ====== টপ বেক বাটন শুরু  ====== */  
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#backToTop:hover {
+  transform: translateY(-3px);
+}
+
 	
 	
   </style>
+
+<!-- CSS 
+  <link rel="stylesheet" href="css/gallery2.css">
+  -->
 </head>
+
+
 <body>
 
 
@@ -341,9 +684,19 @@ nav ul li a:hover {
   <!-- TOP SLIDER -->
 <section class="top-slider">
   <div class="slides">
-    <img src="images/gallery1.jpg" class="active">
-    <img src="images/gallery2.jpg">
-    <img src="images/gallery3.jpg">
+    <img src="images/slider1.jpg" class="active">
+    <img src="images/slider2.jpg">
+    <img src="images/slider3.jpg">
+    <img src="images/slider4.jpg">
+    <img src="images/slider5.jpg">
+    <img src="images/slider6.jpg">
+    <img src="images/slider7.jpg">
+    <img src="images/slider8.jpg">
+    <img src="images/slider9.jpg">
+    <img src="images/slider10.jpg">
+    <img src="images/slider11.jpg">
+    <img src="images/slider12.jpg">
+    <img src="images/slider13.jpg">
   </div>
 
   <button class="nav prev" onclick="prevSlide()">❮</button>
@@ -364,9 +717,15 @@ nav ul li a:hover {
 
 
  
+ <div class="notice-wrapper">
+  <div class="notice-label">নোটিশ 📢</div>
+  <div class="notice-track">
+    <div class="notice-move" id="noticeMove">
+     
+    </div>
+  </div>
+</div>
 
-
-  
  
 <!-- Main Design Section -->
   <main class="container" id="home">
@@ -376,9 +735,9 @@ nav ul li a:hover {
         <h1>Welcome to Our School </h1>
         <p>আপনার সন্তানের সেরা শিক্ষাজীবনের জন্য আধুনিক শিক্ষা, উন্নত পরিকাঠামো এবং অভিজ্ঞ শিক্ষককোষ।</p>
         <div class="stats">
-          <div class="stat"><b>১২০০+</b><small>শিক্ষার্থী</small></div>
-          <div class="stat"><b>২৫</b><small>শিক্ষক</small></div>
-          <div class="stat"><b>১২</b><small>শিক্ষা বিভাগ</small></div>
+          <div class="stat"><b>৪৫০+</b><small>শিক্ষার্থী</small></div>
+          <div class="stat"><b>১৩</b><small>শিক্ষক</small></div>
+          <div class="stat"><b>৩</b> <small>শিক্ষা বিভাগ <br>( বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষা শাখা ) </small></div>
         </div>
 
         <div style="margin-top:16px;display:flex;gap:8px">
@@ -390,11 +749,16 @@ nav ul li a:hover {
 
       <aside>
         <div class="card">
-          <h3>নোটিশ বোর্ড</h3>
-          <div id="notices">
-            <div class="notice"><small>৩০ ডিসেম্বর ২০২৫</small><div><strong>জুনিয়র বৃত্তি পরীক্ষা-২০২৫ স্থগিত</strong><p>আগামীকালের জুনিয়র বৃত্তি পরীক্ষা-২০২৫ স্থগিত উক্ত পরীক্ষা আগামী ০৫/০১/২০২৬ খ্রিঃ তারিখ রোজ সোমবার অনুষ্ঠিত হবে।</p></div></div>
+        
+          <div>
+            
+			<div class="accivment">
+			<h3>আমাদের গর্ব</h3>
+			<img src="images/bushra.jpeg" alt="Zone Commander" class="student-img">
+			<h4><u>ফৌজিয়া রহমান চৌধুরি বুশরা</u></h4>
+			<p style="text-align: justify;">২০২৫ সালের এসএসসি ও সমমানের পরীক্ষায় মানবিক শাখা থেকে বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় এর কৃতি ছাত্রী চট্টগ্রাম বোর্ডে ৩য় তম স্থান অর্জন করায় ফৌজিয়া রহমান চৌধুরি বুশরাকে আন্তরিক অভিনন্দন ও শুভেচ্ছা।</p>
+		</div>
 			
-            <div class="notice"><small>২০ ডিসেম্বর ২০২৫</small><div><strong>ভর্তি চলছে</strong><p>বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়ে-২০২৬ শিক্ষাবর্ষে ৬ষ্ঠ থেকে ৯ম শ্রেণি পর্যন্ত ছাত্র/ছাত্রী ভর্তি চলছে। সকাল ১০টা থেকে দুপুর ২টার মধ্যে অফিস কক্ষ হতে ভর্তি ফরম সংগ্রহ করতে পারবেন। </p></div></div>
           </div>
         </div>
       </aside>
@@ -409,34 +773,27 @@ nav ul li a:hover {
 		  
 		  
 		  
-		  <p style="text-align: justify;" > <b>ইতিহাস:</b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় বাংলাদেশের চট্টগ্রাম বিভাগের চট্টগ্রাম জেলার ফটিকছড়ি উপজেলায় অবস্থিত একটি বেসরকারি উচ্চ মাধ্যমিক বিদ্যালয় । স্কুলটি ২০১৮ সালে বাংলাদেশ সেনাবাহিনী এবং স্থানীয়দের অগ্রগামী ভুমিকার জন্য প্রতিষ্ঠিত হয়েছিল । বিদ্যালয়টি গত ২৯ অক্টোবর ২০১৮ তারিখে প্রতিষ্ঠিত হয়। প্রাথমিকভাবে ৩৮৭ জন শিক্ষার্থী, ১ জন প্রধান শিক্ষক এবং ৮ জন সহকারী শিক্ষক নিয়ে শুরু হয়েছিল । প্রতিষ্ঠার পর হতে এখন পর্যন্ত মানসম্মত শিক্ষা প্রদান করে আসছে। </p>
+		  <p style="text-align: justify;" > <b><u>ইতিহাস:</u></b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় টি লক্ষীছড়ি জোনের বাইন্যাছোলা আর্মি ক্যাম্প সংলগ্ন লক্ষীছড়ি উপজেলা, খাগড়াছড়ি ও ফটিকছড়ি উপজেলা, চট্টগ্রামের মধ্যবর্তী স্থানে অবস্থিত । স্কুলটি এই প্রত্যন্ত অঞ্চলের উভয় উপজেলার পাহাড়ী ও বাঙ্গালী ছেলে মেয়েদের শিক্ষার সুযোগ সৃষ্টির লক্ষ্যে <b>বাংলাদেশ সেনাবাহিনী</b> কর্তৃক ২৯ অক্টোবর ২০১৮ সালে প্রতিষ্ঠিত হয়। প্রতিষ্ঠা লগ্ন থেকে স্থানীয় গুরুত্বপূর্ণ ব্যক্তিবর্গ স্কুলের সার্বিক উন্নয়ন, শৃংখলা ও শিক্ষার মান উন্নয়নে নানাভাবে অবদান রেখে যাচ্ছে। প্রাথমিকভাবে ১৯৪ জন পাহাড়ী, ১৯৩ জন বাঙ্গালী সর্বমোট ৩৮৭ জন শিক্ষার্থী, ১ জন প্রধান শিক্ষক এবং ৮ জন সহকারী শিক্ষক নিয়ে শুরু হয়েছিল । প্রতিষ্ঠার পর হতে এখন পর্যন্ত মানসম্মত শিক্ষা প্রদান করে আসছে। </p>
 		  
           
-          <p style="text-align: justify;" ><b>ভিশন:</b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টিকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় হওয়ার প্রচেষ্টা করা, যেখানে পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে উঠবে এবং সমাজে অর্থপূর্ণ অবদান রাখবে।</p>
+          <p style="text-align: justify;" ><b><u>ভিশন:</u></b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টিকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় হওয়ার প্রচেষ্টা করা, যেখানে পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে উঠবে এবং সমাজে অর্থপূর্ণ অবদান রাখবে।</p>
+		  
+		   <p style="text-align: justify;" ><b><u>আমাদের উদ্দেশ্য:</u></b> এই প্রতিষ্ঠানের লক্ষ্য শিক্ষার্থীদের সার্বিক উন্নয়ন নিশ্চিত করা। কার্যকর শিক্ষাদান, মুল্যবোধ ও সৎচরিত্র গঠন।</p>
 		  
           <div class="cards">
 			<div class="card">
 			<img src="images/z_comd.jpeg" alt="Zone Commander" class="card-img">
-			<h4>Zone Commander Message</h4>
-			<p style="text-align: justify;">সকল শিক্ষার্থীকে অনুপ্রাণিত করা এবং তাদের সৃজনশীলতাকে বিকাশ করা আমাদের প্রধান লক্ষ্য</p>
+			<h4><u>সভাপতির বক্তব্য</u></h4>
+			<p style="text-align: justify;">......................</p>
 		</div>
 
 		<div class="card">
-			<img src="images/profile.jpg" alt="Principal" class="card-img">
-			<h4>Principal Message</h4>
-			<p style="text-align: justify;">বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় এর সকল শিক্ষার্থীকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় এর ন্যায় পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে তোলায় আমাদের মুল লক্ষ্য</p>
-		</div>
-
-		<div class="card">
-			<img src="images/profile.jpg" alt="Mission" class="card-img">
-			<h4>Our Mission</h4>
-			<p style="text-align: justify;">আমাদের লক্ষ্য শিক্ষার্থীদের সার্বিক উন্নয়ন নিশ্চিত করা। কার্যকর শিক্ষাদান, সম্মান ও সৎচরিত্র গঠন।</p>
+			<img src="images/head_teacher.png" alt="Principal" class="card-img">
+			<h4><u>প্রধান শিক্ষকের বক্তব্য</u></h4>
+			<p style="text-align: justify;"> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়ের পক্ষ থেকে সকল শিক্ষক, শিক্ষার্থী, অভিভাবক ও শুভানুধ্যায়ীদের জানাই আন্তরিক শুভেচ্ছা ও অভিনন্দন। <br> আমাদের বিদ্যালয়টি খাগড়াছড়ি জেলার লক্ষীছড়ি উপজেলার লক্ষীছড়ি ইউনিয়নের বাইন্যাছোলা গ্রাম এবং চট্টগ্রাম জেলার ফটিকছড়ি উপজেলার কাঞ্চননগর ইউনিয়নের মানিকপুর গ্রামের সীমান্তবর্তী বাইন্যাছড়া সেনা ক্যাম্প এলাকায় অবস্থিত। দীর্ঘদিন ধরে এই অঞ্চলের শিক্ষার্থীদের কাছাকাছি কোনো মাধ্যমিক বিদ্যালয় না থাকায় শিক্ষালাভ ছিল অত্যন্ত কষ্টসাধ্য ও দুরূহ। অনেকেই দীর্ঘপথ পায়ে হেঁটে দূরবর্তী বিদ্যালয়ে যেত, ফলে অনেক প্রতিভাবান শিক্ষার্থী মাঝপথেই ঝরে পড়ত। এই প্রেক্ষাপটে, এলাকার শিক্ষানুরাগী ব্যক্তিবর্গ এবং গুইমারা রিজিয়নস্থ; লক্ষীছড়ি সেনা জোনের অক্লান্ত প্রচেষ্টায় ২০১৮ সালের ২৯ অক্টোবর প্রতিষ্ঠিত হয় 'বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়"। </p>
+			</div>		
 		</div>
 	</div>
-
-		  
-		  
-        </div>
 		
 		
 		
@@ -445,19 +802,120 @@ nav ul li a:hover {
           <h3>Teachers</h3>
           <div style="display:grid;gap:10px;margin-top:8px">
             <div class="teacher">
-              <div class="avatar">আ</div>
+              <div class="avatar">নিবিড়</div>
               <div>
-                <strong>আশিকুর রহমান</strong>
-                <div style="font-size:13px;color:var(--muted)">গণিত শিক্ষক</div>
+                <strong>মোঃ নাজমুল হুদা (নিবিড়)</strong>
+                <div style="font-size:13px;color:var(--muted)">প্রধান শিক্ষক</div>
               </div>
             </div>
+			
             <div class="teacher">
-              <div class="avatar">সু</div>
+              <div class="avatar">এনামুল</div>
               <div>
-                <strong>সুমনা আক্তার</strong>
-                <div style="font-size:13px;color:var(--muted)">বিজ্ঞান শিক্ষক</div>
+                <strong>মোঃ এনামুল মোস্তফা</strong>
+                <div style="font-size:13px;color:var(--muted)">সহকারি প্রধান শিক্ষক</div>
               </div>
             </div>
+			
+			<div class="teacher">
+              <div class="avatar">মনছুর</div>
+              <div>
+                <strong>মোঃ মনছুর আলম</strong>
+                <div style="font-size:13px;color:var(--muted)">ইংরেজি শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">নুর</div>
+              <div>
+                <strong>সৈয়দা রায়হাতুন নুর</strong>
+                <div style="font-size:13px;color:var(--muted)">সামাজিক বিজ্ঞান শিক্ষিকা</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">সুমন</div>
+              <div>
+                <strong>সুমন চাকমা</strong>
+                <div style="font-size:13px;color:var(--muted)">আইসিটি শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">জাহাঙ্গীর</div>
+              <div>
+                <strong>মোঃ জাহাঙ্গীর আলম</strong>
+                <div style="font-size:13px;color:var(--muted)">সামাজিক বিজ্ঞান শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">নিপন</div>
+              <div>
+                <strong>নিপন চাকামা</strong>
+                <div style="font-size:13px;color:var(--muted)">গনিত শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">স্বপ্না</div>
+              <div>
+                <strong>তাহমিদা নাঈম স্বপ্না</strong>
+                <div style="font-size:13px;color:var(--muted)">বাংলা শিক্ষিকা</div>
+              </div>
+            </div>
+		
+		<div class="teacher">
+              <div class="avatar">হাসানুল</div>
+              <div>
+                <strong>মোঃ হাসানুল করিম</strong>
+                <div style="font-size:13px;color:var(--muted)">ইসলাম ও নৈতিক শিক্ষা</div>
+              </div>
+            </div>
+			
+			
+			<div class="teacher">
+              <div class="avatar">নাজমুল</div>
+              <div>
+                <strong>মোঃ নাজমুল হক ভূঁইয়া</strong>
+                <div style="font-size:13px;color:var(--muted)">ভৌত বিজ্ঞান শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">তরিকুল</div>
+              <div>
+                <strong>মোঃ তরিকুল ইসলাম</strong>
+                <div style="font-size:13px;color:var(--muted)">ভৌত বিজ্ঞান শিক্ষক</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">কালাম</div>
+              <div>
+                <strong>মো: আবুল কালাম</strong>
+                <div style="font-size:13px;color:var(--muted)">শারীরিক শিক্ষা</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">ইয়াছিন</div>
+              <div>
+                <strong>মোঃ ইয়াছিন </strong>
+                <div style="font-size:13px;color:var(--muted)">কম্পিউটার অপারেটর</div>
+              </div>
+            </div>
+			
+			<div class="teacher">
+              <div class="avatar">রিনা</div>
+              <div>
+                <strong>রিনা দাশ </strong>
+                <div style="font-size:13px;color:var(--muted)">আয়া</div>
+              </div>
+            </div>
+			
+			
+			
             <div class="teacher">
               <div class="teacher-more" style="font-size:13px;color:var(--muted);margin-top:6px">আরও শিক্ষক দেখুন</div>
             </div>
@@ -490,90 +948,163 @@ nav ul li a:hover {
             </table>
           </div>
 
-          <div style="display:flex;gap:12px;margin-top:12px">
+         
+		 <div style="display:flex;gap:12px;margin-top:12px">
             <div class="card" style="flex:1">
               <h4>Syllabus</h4>
               <p>ক্লাসের সিলেবাস ডাউনলোড করতে পারবে (PDF)</p>
-              <button onclick="alert('ডাউনলোড ফাংশন ব্যাকএন্ড প্রয়োজন')">Download</button>
+			  
+			  <a 
+				href="https://drive.google.com/uc?export=download&id=19-BM0RFDNg67dfiPjdya_ULIJCFe_Itn"
+				class="download-btn"
+				target="_blank"	>
+				📥 Download Syllabus
+				</a>
+			
             </div>
+		
+           <div class="card" style="width:180px">
+			<h4>Results</h4>
+				<p><small>পরীক্ষার ফলাফল আপলোড করা হয়েছে</small></p>
 
-            <div class="card" style="width:180px">
-              <h4>Results</h4>
-              <p><small>পরীক্ষার ফলাফল আপলোড করা হয়েছে</small></p>
-              <button onclick="openModal('resultsModal')">View</button>
-            </div>
+					<a
+						href="https://drive.google.com/file/d/19-BM0RFDNg67dfiPjdya_ULIJCFe_Itn/preview"
+						class="result-btn"
+						target="_blank">View Result</a>
+					</div>
+
+			
+			
+			
           </div>
         </div>
 
-        <aside class="card">
-          <h4>Upcoming Events</h4>
-          <ul style="padding-left:18px;color:var(--muted)">
-            <li>বার্ষিক ক্রীড়া — ৩১ জানুয়ারি ২০২৬</li>
-            <li>সাংস্কৃতিক অনুষ্ঠান — ১৪ ফেব্রুয়ারি ২০২৬</li>
-          </ul>
-        </aside>
+     
+	
+	<aside class="card">
+		<h4>Upcoming Events</h4>
+		<ul id="eventsList" style="padding-left:18px;color:var(--muted)">
+				Loading.....
+		</ul>
+	</aside>
+
       </div>
     </section>
 	
-	
+
+
+<!-- Admission Form -->
 
     <section id="admission">
       <h2>Admission</h2>
+	 
       <div class="card">
         <p>আবেদন ফি: ৫০০ টাকা (অনুগ্রহ করে ব্যাংক/অফলাইন পদ্ধতিতে জমা দিন)। নিচের ফরম পূরণ করে সরাসরি আবেদন করতে পারেন।</p>
         <form id="admissionForm" onsubmit="submitAdmission(event)">
           <div class="row">
-            <input type="text" id="name" placeholder="Full name" required>
-            <input type="text" id="classname" placeholder="Class to apply (e.g., ৫)" required>
+             <input type="text" name="name" id="name" placeholder="Full name" required>
+			 
+			<select id="classname" name="classname" required>
+					<option value="">শ্রেণী নির্বাচন করুন</option>
+					<option value="Class Six">Class Six (৬ষ্ঠ)</option>
+					<option value="Class Seven">Class Seven (৭ম)</option>
+					<option value="Class Eight">Class Eight (৮ম)</option>
+					<option value="Class Nine">Class Nine (৯ম)</option>
+					<option value="Class Ten">Class Ten (১০ম)</option>
+			</select>
+
           </div>
-          <div class="row" style="margin-top:10px">
-            <input type="email" id="email" placeholder="Email">
-            <input type="tel" id="phone" placeholder="Phone number">
-          </div>
-          <div style="margin-top:10px">
-            <textarea id="address" placeholder="Address" rows="3"></textarea>
-          </div>
+		  
+		  <div class="row" style="margin-top:10px">
+			<input type="email" name="email" id="email" placeholder="Email">
+			<input type="tel" name="phone" id="phone" placeholder="Phone number">
+		  </div>
+		   <div style="margin-top:10px">
+				<textarea name="address" id="address" placeholder="Address" rows="3"></textarea>
+		   </div>
+		  
           <div style="margin-top:10px;display:flex;gap:8px">
-            <button type="submit">Submit Application</button>
-            <button type="button" onclick="document.getElementById('admissionForm').reset()" style="background:#eee;color:#111">Reset</button>
-          </div>
+			<button type="submit" id="submitBtn">Submit Application</button>
+			<button type="button" onclick="document.getElementById('admissionForm').reset()">Reset</button>
+		  </div>
+		  
         </form>
       </div>
+	  
     </section>
 	
-	
+ 
 
 
-   
- <!-- Gallery Section -->
-<section id="gallery">
+<!-- Gallery 2 Section -->
+<section id="gallery2">
   <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="images/gallery1.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery2.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery3.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery4.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery5.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery6.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery7.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery8.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery9.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery10.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery11.jpg" onclick="galleryOpenImage(this.src)">
-    <img src="images/gallery12.jpg" onclick="galleryOpenImage(this.src)">
+
+  <!-- Section Thumbnails -->
+<div class="g2-sections">
+
+<div class="g2-thumb" onclick="g2OpenSection('visit', 13)">
+    <img src="images/visit/visit1.jpg" alt="">
+    <div class="g2-thumb-title">Visitors</div>
   </div>
 
- <div id="imageModal">
-  <span class="close" onclick="galleryCloseImage()">&times;</span>
-  <img id="modalImg">
-  <button id="prevBtn" onclick="prevImage()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:30px;color:white;background:none;border:none;cursor:pointer;">&#10094;</button>
-  <button id="nextBtn" onclick="nextImage()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:30px;color:white;background:none;border:none;cursor:pointer;">&#10095;</button>
+  <div class="g2-thumb" onclick="g2OpenSection('development', 15)">
+    <img src="images/development/development1.jpg" alt="">
+    <div class="g2-thumb-title">School Development</div>
+  </div>
+  
+   <div class="g2-thumb" onclick="g2OpenSection('academic',23)">
+    <img src="images/academic/academic1.jpg" alt="">
+    <div class="g2-thumb-title">Academic Activities</div>
+  </div>
+  
+  <div class="g2-thumb" onclick="g2OpenSection('sports',13)">
+    <img src="images/sports/sports1.jpg" alt="">
+    <div class="g2-thumb-title">Games & Sports</div>
+  </div>
+  
+  <div class="g2-thumb" onclick="g2OpenSection('socialEvent',22)">
+    <img src="images/socialEvent/socialEvent1.jpg" alt="">
+    <div class="g2-thumb-title">Programs</div>
+  </div>
+
+  <div class="g2-thumb" onclick="g2OpenSection('achievement',11)">
+    <img src="images/achievement/achievement1.jpg" alt="">
+    <div class="g2-thumb-title">Achievements</div>
+  </div>
+
+  <div class="g2-thumb" onclick="g2OpenSection('reception',7)">
+    <img src="images/reception/reception5.jpg" alt="">
+    <div class="g2-thumb-title">Newer Reception </div>
+  </div>
+  
+  <div class="g2-thumb" onclick="g2OpenSection('Others',9)">
+    <img src="images/Others/others1.jpg" alt="">
+    <div class="g2-thumb-title">Others</div>
+  </div>
+
 </div>
- 
+
+
+  <!-- Image Grid -->
+  <div id="g2-grid" class="g2-grid"></div>
+
+  <!-- Modal -->
+  <div id="g2-modal">
+    <span class="g2-close" onclick="g2CloseModal()">&times;</span>
+    <button class="g2-nav g2-prev" onclick="g2Prev()">&#10094;</button>
+    <img id="g2-modal-img">
+    <button class="g2-nav g2-next" onclick="g2Next()">&#10095;</button>
+  </div>
 </section>
 
 
-  
+
+
+
+
+
+
 
 
 
@@ -591,45 +1122,53 @@ nav ul li a:hover {
             <div style="margin-top:8px">
 			
 			<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365.0000000000001!2d91.8699853!3d22.7602624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752d73f22084861%3A0x5af7c96a1fe71efd!2sBainnachola%20Manikpur%20High%20School!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
-  width="100%" height="300" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-			
-
-			  
-			  
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365.0000000000001!2d91.8699853!3d22.7602624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752d73f22084861%3A0x5af7c96a1fe71efd!2sBainnachola%20Manikpur%20High%20School!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+				width="100%" height="300" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
 			  
             </div>
           </div>
         </div>
 
-        <aside class="card">
-          <h4>Message us</h4>
-          <form onsubmit="sendMessage(event)">
-            <input required placeholder="Your name" id="msgName">
-            <input required placeholder="Your email" id="msgEmail">
-            <textarea required placeholder="Message" id="msgText" rows="5"></textarea>
-            <div style="margin-top:8px">
-              <button type="submit">Send Message</button>
-            </div>
-          </form>
-        </aside>
+     
+  <aside class="card">
+    <form id="messageForm" onsubmit="submitMessage(event)">
+      <input type="text" name="msgName" id="msgName" placeholder="Your Name" required>
+      <input type="email" name="msgEmail" id="msgEmail" placeholder="Your Email" required>
+      <textarea name="msgText" id="msgText" rows="5" placeholder="Your Message" required></textarea>
+      <div style="margin-top:8px">
+	  <button id="messageBtn">Send Message</button>
+
+        
       </div>
+    </form>
+  </aside>
+		
+		
+		
+      </div>
+	  
+	  
     </section>
-	
+
 	<!-- Contact Us শেষ এখান থেকে -->
 	
+
+
+
+
 
   </main>
   
 
   <footer>
     <div class="container">
+	<button id="backToTop" onclick="scrollToTop()">Home</button>
       <div style="display:flex;justify-content:space-between;align-items:left;gap:12px;flex-wrap:wrap">
         <div style="font-size:15px;"> &copy; <b>Bainnachola Manikpur High School</b> — 2018 - <span id="year"></span></div>
-        <div style="color:var(--muted)">Developed by: Sgt Mashidul, 32 Fd Regt Arty,Laxmichari Zone</div>
+        <div style="color:var(--muted)">Developed by: Sgt Mashidul, 32 Fd Regt Arty, Laxmichari Zone</div>
       </div>
+	  
     </div>
   </footer>
   
@@ -654,6 +1193,10 @@ nav ul li a:hover {
  
  
  
+ 
+ 
+ 
+ 
 <!-- Java Script শুরু এখান থেকে -->
   <script>
     
@@ -661,97 +1204,74 @@ nav ul li a:hover {
    
 
     // Admission form - since there's no backend, we'll store to localStorage as a demo
-	
-    function submitAdmission(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const cls = document.getElementById('classname').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const address = document.getElementById('address').value.trim();
-      if(!name || !cls){ alert('নাম ও ক্লাস অবশ্যই দিতে হবে'); return; }
-      const applications = JSON.parse(localStorage.getItem('applications')||'[]');
-      applications.push({name,cls,email,phone,address,submitted: new Date().toISOString()});
-      localStorage.setItem('applications', JSON.stringify(applications));
-      alert('Application submitted (demo). Admin panel যোগ করলে এখানে আপলোড হবে।');
-      e.target.reset();
-    }
 
-    // Contact message demo
-    function sendMessage(e){
-      e.preventDefault();
-      const n = document.getElementById('msgName').value.trim();
-      const em = document.getElementById('msgEmail').value.trim();
-      const tx = document.getElementById('msgText').value.trim();
-      if(!n||!em||!tx){alert('সবগুলো ফিল্ড পূরণ করুন');return}
-      const messages = JSON.parse(localStorage.getItem('messages')||'[]');
-      messages.push({n,em,tx,at:new Date().toISOString()});
-      localStorage.setItem('messages', JSON.stringify(messages));
-      alert('Message sent (demo). Admin প্যানেলে দেখুন।');
-      e.target.reset();
-    }
-	
-	const yearEl = document.getElementById("year");
-  if(yearEl){
-    yearEl.textContent = new Date().getFullYear();
-  }
-	
-	
-// ছবির কার্যক্রম এখানে শুরু ================================================
-document.addEventListener('DOMContentLoaded', function() {
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSOyBdgUIcL8sTphlRsUPRh7nqjFGCQGssXyJvAw5YWrEgfSOVgtn3o98b70ROO_foZA/exec";
+// Admission Form
+function submitAdmission(e){
+  e.preventDefault();
 
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImg');
+  const form = document.getElementById('admissionForm');
+  const btn = document.getElementById('submitBtn');
 
-  // =========================
-  // Gallery images list
-  const galleryImages = Array.from(document.querySelectorAll('#gallery .gallery img'));
-  let currentIndex = 0;
-  // =========================
+  // ▶ লোডিং শুরু
+  btn.classList.add('loading');
+  btn.disabled = true;
 
-  window.galleryOpenImage = function(src){
-    currentIndex = galleryImages.findIndex(img => img.src === src);
-    modalImg.src = galleryImages[currentIndex].src;
-    modal.style.display = 'flex';
-  }
+  const formData = new FormData(form);
+  formData.append("formType", "admission");
 
-  window.galleryCloseImage = function(){
-    modal.style.display = 'none';
-  }
+  fetch(SCRIPT_URL, { method: "POST", body: formData })
+    .then(res => res.text())
+    .then(data => {
+      alert("আবেদন সফলভাবে জমা হয়েছে!");
+      form.reset();
+    })
+    .catch(err => {
+      alert("কিছু সমস্যা হয়েছে! আবার চেষ্টা করুন।");
+      console.error(err);
+    })
+    .finally(() => {
+      // ▶ লোডিং শেষ
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    });
+}
 
-  // Click outside image to close
-  modal.addEventListener('click', function(e){
-    if(e.target === modal){
-      galleryCloseImage();
-    }
-  });
+// Message Form
+function submitMessage(e) {
+  e.preventDefault();
 
-  // Esc key & arrow keys
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      galleryCloseImage();
-    }
-    if(e.key === 'ArrowRight'){
-      nextImage();
-    }
-    if(e.key === 'ArrowLeft'){
-      prevImage();
-    }
-  });
+  const form = document.getElementById('messageForm');
+  const btn = document.getElementById('messageBtn');
 
-  // Next / Previous functions
-  window.nextImage = function(){
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    modalImg.src = galleryImages[currentIndex].src;
-  }
+  // loading শুরু
+  btn.classList.add("loading");
+  btn.disabled = true;
 
-  window.prevImage = function(){
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    modalImg.src = galleryImages[currentIndex].src;
-  }
+  const formData = new FormData(form);
+  formData.append("formType", "message"); // ফর্ম টাইপ যোগ
 
-});
-// ছবির কার্যক্রম এখানে শেষ ================================================
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: formData
+  })
+    .then(res => res.text())
+    .then(data => {
+      alert("Message পাঠানো হয়েছে!");
+      form.reset();
+    })
+    .catch(err => {
+      alert("কিছু সমস্যা হয়েছে! আবার চেষ্টা করুন।");
+      console.error(err);
+    })
+    .finally(() => {
+      // loading শেষ
+      btn.classList.remove("loading");
+      btn.disabled = false;
+    });
+}
+
+
 
 
 // স্লাইডার কোড এখানে শুরু ================================================
@@ -791,10 +1311,154 @@ setInterval(nextSlide, 5000);
 
 // স্লাইডার কোড এখানে শেষ ================================================
 
-	
-  </script>
+// টপ বাটন কোড ==========================================================
+const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+// বছর একটিভ কোড ==========================================================
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
+// নোটিশ বোড কন্ট্রোল কোড ==========================================================
+
+ fetch("https://script.google.com/macros/s/AKfycbwaHGzYcv8OEyigbXyno4lMRDrowpClK6eo9DbjuD7Isl4oMOdr4zozpIFK46oRtQ_l/exec")
+
+  .then(res => res.json())
+  .then(data => {
+    const box = document.getElementById("noticeMove");
+    data.forEach(n => {
+      box.innerHTML += `
+        <a href="${n.pdf}" target="_blank">${n.title}</a>
+      `;	  
+    });
+  });
+  
   
 
+  
+ 
 
+  
+  
+  
+
+// আপকামিং ইভেন্ট কন্ট্রোল কোড ==========================================================
+
+  document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://script.google.com/macros/s/AKfycbwI3Eywk9-L3PBAMWmqKfDLI5hI3a5A7_lI5jTI4t6fX6oMJx7bmlzMpgchuS8WblLWxQ/exec?type=events")
+  
+    .then(res => res.text()) // safest
+    .then(text => {
+      let data = [];
+      try {
+        data = JSON.parse(text);
+        if (!Array.isArray(data)) data = [];
+      } catch (e) {
+        console.error("JSON parse error:", e, text);
+      }
+
+      const ul = document.getElementById("eventsList");
+      ul.innerHTML = "";
+
+      if (!data.length) {
+        ul.innerHTML = "<li>কোনো ইভেন্ট পাওয়া যায়নি</li>";
+        return;
+      }
+
+      data.forEach(e => {
+        const li = document.createElement("li");
+        li.textContent = e.event + " — " + e.date;
+        ul.appendChild(li);
+      });
+    })
+    .catch(err => {
+      console.error("Events load failed:", err);
+    });
+});
+
+
+
+
+
+
+
+// গ্রীড ভিউ গ্যালারী=========================
+
+
+
+
+
+let g2Images = [];
+let g2Index = 0;
+
+function g2OpenSection(folder, total){
+  const grid = document.getElementById('g2-grid');
+  grid.innerHTML = '';
+  g2Images = [];
+
+  for(let i=1;i<=total;i++){
+    const img = document.createElement('img');
+    img.src = `images/${folder}/${folder}${i}.jpg`;
+    img.onclick = () => g2OpenModal(img.src);
+
+    g2Images.push(img);
+    grid.appendChild(img);
+  }
+}
+
+
+function g2OpenModal(src){
+  g2Index = g2Images.findIndex(i => i.src === src);
+  document.getElementById('g2-modal-img').src = src;
+  document.getElementById('g2-modal').style.display = 'flex';
+}
+
+function g2CloseModal(){
+  document.getElementById('g2-modal').style.display = 'none';
+}
+
+function g2Next(){
+  g2Index = (g2Index + 1) % g2Images.length;
+  document.getElementById('g2-modal-img').src = g2Images[g2Index].src;
+}
+
+function g2Prev(){
+  g2Index = (g2Index - 1 + g2Images.length) % g2Images.length;
+  document.getElementById('g2-modal-img').src = g2Images[g2Index].src;
+}
+
+/* Keyboard support */
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape') g2CloseModal();
+  if(e.key === 'ArrowRight') g2Next();
+  if(e.key === 'ArrowLeft') g2Prev();
+});
+
+
+
+
+
+
+
+
+
+
+
+	
+  </script>
 </body>
 </html>
