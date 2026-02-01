@@ -1118,7 +1118,7 @@ select {
         <div>
           <div class="card">
             <h4>Get in touch</h4>
-            <p style="color:var(--muted)">ঠিকানা: Manikpur, Kanchannagar, Fatikchhari , Chittagong, Bangladesh, 4350<br>Phone: 01816-160539<br>Email: bmhs.edu@gmail.com</p>
+            <p style="color:var(--muted)">ঠিকানা: Manikpur, Kanchannagar, Fatikchhari , Chittagong, Bangladesh, 4350<br>Phone: 01678-280280, 01711-941685<br>Email: bmhs.edu@gmail.com</p>
             <div style="margin-top:8px">
 			
 			<iframe 
@@ -1276,38 +1276,51 @@ function submitMessage(e) {
 
 // স্লাইডার কোড এখানে শুরু ================================================
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.top-slider img');
-const dotsContainer = document.querySelector('.dots');
 
-// create dots
-slides.forEach((_, i) => {
-  const dot = document.createElement('span');
-  if(i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => {
-    currentSlide = i;
-    showSlide(currentSlide);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.top-slider img');
+  const dotsContainer = document.querySelector('.dots');
+
+  if (slides.length === 0 || !dotsContainer) return;
+
+  // create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      currentSlide = i;
+      showSlide(currentSlide);
+    });
+    dotsContainer.appendChild(dot);
   });
-  dotsContainer.appendChild(dot);
+
+  const dots = document.querySelectorAll('.dots span');
+
+  function showSlide(index){
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  function nextSlide(){
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 5000);
+
 });
 
-const dots = document.querySelectorAll('.dots span');
 
-function showSlide(index){
-  slides.forEach(s => s.classList.remove('active'));
-  dots.forEach(d => d.classList.remove('active'));
 
-  slides[index].classList.add('active');
-  dots[index].classList.add('active');
-}
 
-function nextSlide(){
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
 
-// auto slide
-setInterval(nextSlide, 5000);
 
 // স্লাইডার কোড এখানে শেষ ================================================
 
