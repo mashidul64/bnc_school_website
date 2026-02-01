@@ -672,7 +672,7 @@ select {
           <li><a href="#about">About</a></li>
           <li><a href="#academic">Academic</a></li>
           <li><a href="#admission">Admission</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#gallery2">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -697,6 +697,9 @@ select {
     <img src="images/slider11.jpg">
     <img src="images/slider12.jpg">
     <img src="images/slider13.jpg">
+    <img src="images/slider14.jpg">
+    <img src="images/slider15.jpg">
+   
   </div>
 
   <button class="nav prev" onclick="prevSlide()">❮</button>
@@ -1043,7 +1046,7 @@ select {
   <!-- Section Thumbnails -->
 <div class="g2-sections">
 
-<div class="g2-thumb" onclick="g2OpenSection('visit', 13)">
+<div class="g2-thumb" onclick="g2OpenSection('visit', 11)">
     <img src="images/visit/visit1.jpg" alt="">
     <div class="g2-thumb-title">Visitors</div>
   </div>
@@ -1053,12 +1056,12 @@ select {
     <div class="g2-thumb-title">School Development</div>
   </div>
   
-   <div class="g2-thumb" onclick="g2OpenSection('academic',23)">
+   <div class="g2-thumb" onclick="g2OpenSection('academic',22)">
     <img src="images/academic/academic1.jpg" alt="">
     <div class="g2-thumb-title">Academic Activities</div>
   </div>
   
-  <div class="g2-thumb" onclick="g2OpenSection('sports',13)">
+  <div class="g2-thumb" onclick="g2OpenSection('sports',12)">
     <img src="images/sports/sports1.jpg" alt="">
     <div class="g2-thumb-title">Games & Sports</div>
   </div>
@@ -1078,7 +1081,7 @@ select {
     <div class="g2-thumb-title">Newer Reception </div>
   </div>
   
-  <div class="g2-thumb" onclick="g2OpenSection('Others',9)">
+  <div class="g2-thumb" onclick="g2OpenSection('Others',6)">
     <img src="images/Others/others1.jpg" alt="">
     <div class="g2-thumb-title">Others</div>
   </div>
@@ -1274,10 +1277,10 @@ function submitMessage(e) {
 
 
 
+
+
+
 // স্লাইডার কোড এখানে শুরু ================================================
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -1318,11 +1321,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-
 // স্লাইডার কোড এখানে শেষ ================================================
+
+
+
 
 // টপ বাটন কোড ==========================================================
 const backToTopBtn = document.getElementById("backToTop");
@@ -1341,6 +1343,9 @@ const backToTopBtn = document.getElementById("backToTop");
       behavior: "smooth"
     });
   }
+  
+  
+  
 // বছর একটিভ কোড ==========================================================
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -1410,10 +1415,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 
 // গ্রীড ভিউ গ্যালারী=========================
-
-
-
-
 
 let g2Images = [];
 let g2Index = 0;
