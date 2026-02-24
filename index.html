@@ -8,7 +8,8 @@
   <title>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</title>
   <meta name="description" content="Example School - বিদ্যালয় ওয়েবসাইট" />
   
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
   
   
@@ -23,40 +24,33 @@
       --radius:12px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+	
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;background:var(--bg);color:#111}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
 	
-	section {
-    min-height: 50vh; /* পুরো ভিউপোর্ট উচ্চতা */
-    display: flex;      /* content vertically & horizontally center করার জন্য */
-    flex-direction: column; /* content top থেকে নিচ পর্যন্ত হলে column */
-    justify-content: center; /* vertical center */
-    padding: 0 20px;   /* left-right spacing */
-}
 
-.container{
-  max-width:1200px;
-  width:100%;
-  padding: 0 15px;
-}
+
 
 
 
     /* ====== হেডার নেভিগেশন বক্স Header / Nav ====== */
 	
 	header {
-    position: sticky;   /* অথবা fixed করলে সবসময় top এ থাকবে */
-    top: 0;
-    z-index: 2000;      /* modal এর উপরে না হলেও সর্বদা উপরে থাকবে */
-    background: linear-gradient(90deg, var(--primary), #3aa0ff);
+		position: sticky;   /* অথবা fixed করলে সবসময় top এ থাকবে */
+		top: 0;
+		z-index: 2000;      /* modal এর উপরে না হলেও সর্বদা উপরে থাকবে */
+		background: linear-gradient(90deg, var(--primary), #3aa0ff);
 	}
 	
-	
     header{background:linear-gradient(90deg,var(--primary),#3aa0ff);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:50;box-shadow:0 4px 12px rgba(11,108,240,0.08)}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+	
+ /* ====== Main Container ====== */	
+    .container{max-width:1400px;margin:0 auto;padding:0 16px}
+    
+	
     .nav{display:flex;align-items:center;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand .logo{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -66,27 +60,24 @@
     .cta{background:var(--accent);color:#111;padding:8px 12px;border-radius:8px;font-weight:700}
 	
 	header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
-}
-main {
-    margin-top: 0px; /* header height অনুযায়ী */
-}
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 2000;
+		}
 
-nav ul li a {
-    transition: color 0.3s, background 0.3s; /* smooth effect */
-    padding: 3px 3px;
-    border-radius: 6px;
-}
+	nav ul li a {
+		transition: color 0.3s, background 0.3s; /* smooth effect */
+		padding: 3px 3px;
+		border-radius: 6px;
+		}
 
 /* Mouse hover effect */
-nav ul li a:hover {
-    background-color: var(--accent); /* তুমি চাইলে অন্য color দিতে পারো */
-    color: #111; /* text color */
-}
+	nav ul li a:hover {
+		background-color: var(--accent); /* তুমি চাইলে অন্য color দিতে পারো */
+		color: #000000; /* text color */
+		}
 
 
 /* ====== হেডার নেভিগেশন বক্স শেষ Header / Nav ====== */
@@ -94,7 +85,20 @@ nav ul li a:hover {
 
 
 
+
+
+
+
 /* স্লাইডার অপশন শুরু========== */
+
+/* ====== স্লাইডার ইমেজ ====== */	
+	section {
+		min-height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;   /* ❗ এখানে padding থাকবে না */
+		}
 
 .top-slider{
   position: relative;
@@ -136,7 +140,7 @@ nav ul li a:hover {
 }
 
 .dots span.active{
-  background: #fff;
+  background: #008000;
   transform: scale(1.4);
 }
 
@@ -156,8 +160,8 @@ nav ul li a:hover {
   display:flex;
   flex-direction:column;
   align-items:center;
-  margin-top: 20px;
-  text-align:center;
+  margin-top: 30px;
+  text-align:left;
   color:#fff;
   padding:20px;
 }
@@ -184,12 +188,13 @@ nav ul li a:hover {
 }
 
 .hero-btn:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
-
-
 /* স্লাইডার অপশন শেষ========== */
+
+
+
 
 
 
@@ -205,7 +210,7 @@ nav ul li a:hover {
 }
 
 .notice-label {
-  background: #0000ff;
+  background: #0c6df1;
   color: white;
   font-weight: bold;
   padding: 12px 18px;
@@ -245,29 +250,96 @@ nav ul li a:hover {
 
 
 
-/* আমাদের সাফল্য ========== */	
-.student-img {
-  width: 100%;
-  height: 300px; /* ছবি চাইলে adjust করা যাবে */
-  object-fit: cover;
-  border-radius: 30px;
-  margin-bottom: 0px;
+
+
+
+
+/* ====== Welcome section ====== */
+	.welcome-box{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85)); padding:22px;border-radius:16px; box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+	
+    .welcome{padding:40px 0;display:grid;grid-template-columns:1fr 520px;gap:20px;align-items:top}
+    .welcome h1{font-size:40px; margin:0 0 10px;text-align:center}
+    .welcome p{color:var(--muted);margin:0 0 16px; text-align:center}
+	
+	
+	.stats {
+  margin:50px 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 
-/* ====== Hero ====== */
+.stat{
+  background:#ffffff;
+  padding:30px;
+  border:2px solid #2c3e50;
+  border-radius:30px;
+  text-align:center;
+  transition:0.3s ease;
+  cursor:pointer;
+}
+
+.stat i{
+  font-size:35px;
+  color:#2c3e50;
+  margin-bottom:10px;
+  display:block;
+  transition:0.3s;
+}
+
+.stat b{
+  display:block;
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.stat small{
+  font-size:14px;
+  color:#555;
+}
+
+.stat:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  border-color:#007bff;
+}
+
+.stat:hover i{
+  color:#007bff;
+  transform:scale(1.2);
+}
 	
-    .hero{padding:40px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:top}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:22px;border-radius:16px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
-    .hero h1{font-size:30px;margin:0 0 10px}
-    .hero p{color:var(--muted);margin:0 0 16px}
-    .stats{display:flex;gap:12px}
-    .stat{background:#fff;padding:12px;border-radius:10px;min-width:110px;text-align:center}
-    .stat b{display:block;font-size:18px}
-	
-	
+	.welcome-box{
+  text-align:center;
+}
+
+
+.admitionBtn{
+  padding:12px 25px;
+  background:#007bff;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+.admitionBtn:hover{
+  background:#ffb400;
+  color:#000000;
+  border:2px solid #007bff;
+ 
+}
+
+
+
+
+
+
+
+/* আমাদের সাফল্য ========== */		
 	.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 16px;
 }
 
@@ -279,44 +351,314 @@ nav ul li a:hover {
   text-align: left; /* ছবির নিচের লেখা সেন্টারে */
 }
 
-.card-img {
+.student-img {
   width: 100%;
-  height: 340px; /* চাইলে adjust করো */
+  height: 300px; /* ছবি চাইলে adjust করা যাবে */
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  border-radius: 30px;
+  margin-bottom: 0px;
 }
 
 
 
 
 
-	
-	
-	
-/* About Section Start ইতিহাস/ মিশন/ শিক্ষক সেকশন ========== */
 
-    /* ====== Sections ====== */
+
+
+	
+	
+	
+/* About Section Start ইতিহাস/ মিশন/ সেকশন ========== */
+
+.aboutContainer{max-width:1300px;margin:0 auto;padding:0 16px}
+
+	.page-section {
+		transform: translateY(40px);
+		transition: all 0.6s ease;
+		}
+
+/* যখন active হবে */
+	.page-section.active {
+		opacity: 1;
+		transform: translateY(0);
+		}
+		
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====== Sections ====== */
      section{padding:28px 0}
     .grid{display:grid;gap:14px}
-    .two-col{grid-template-columns:1fr 360px}
+    .two-col{grid-template-columns:flex-}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
     .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,48,0.06)}
 	
 	
-
-    /* ====== Teachers list ====== */
-    .teacher{display:flex;gap:12px;align-items:center}
-    .teacher .avatar{width:58px;height:58px;border-radius:10px;background:linear-gradient(45deg,var(--primary),#7bc7ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+/* সিও ছবি adjust করো */
+.card-img {
+  width: 100%;
+  height:650px; /* চাইলে adjust করো */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
 	
+	
+.message-section {
+		padding: 40px;
+		background: #f9f9f9;
+		}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.message-card {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #ddd;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 210px;
+  height: 240px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.profile h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.message-card p {
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 		
-/* About Section End ইতিহাস/ মিশন/ শিক্ষক সেকশন শেষ ========== */	
+/* About Section End ইতিহাস/ মিশন/ শিক্ষক সেকশন শেষ ========== */
+
+
+
+
+
 	
+/* About Section End শিক্ষক সেকশন শুরু ========== */ 	
+	
+#teachers {
+  padding: 60px 40px;
+  background: #f4f7fb;
+}
+
+.section-title {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #111;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.teacher-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.teacher-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.teacher-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s ease;
+  text-align: center;
+}
+
+.teacher-info h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.teacher-info p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.teacher-card:hover .teacher-info {
+  opacity: 1;
+}
+
+.teacher-card img {
+  transition: 0.4s ease;
+}
+
+.teacher-card:hover img {
+  transform: scale(1.1);
+}
+
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:1000;
+}
+
+.modal-content{
+  background:white;
+  max-width:750px;
+  max-length:250px;
+  margin:100px auto;
+  padding:20px;
+  border-radius:15px;
+  position:relative;
+}
+
+
+
+/* ===== Profile layout ===== */
+.profile-layout{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+
+.profile-left{
+  flex:0 0 180px;
+  text-align:center;
+}
+
+.profile-img{
+  width:160px;
+  border-radius:12px;
+  border:3px solid #eee;
+}
+
+.profile-right{
+  flex:1;
+}
+
+.profile-right h3{
+  margin:0;
+  font-size:20px;
+}
+
+.profile-right .post{
+  color:#555;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:26px;
+  cursor:pointer;
+}
+
+
+
+
+/* ===== Mobile responsive ===== */
+@media(max-width:600px){
+  .profile-layout{
+    flex-direction:column;
+    text-align:center;
+  }
+  .profile-left{
+    margin:auto;
+  }
+}
+.profile-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.profile-table td{
+  padding:6px 8px;
+  border-bottom:1px solid #ddd;
+}
+
+.profile-table td:first-child{
+  font-weight:bold;
+  width:40%;
+  color:#333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 /* ====== এ্যাডমিশন সেকশন শুরু ====== */	
-	#submitBtn {
+.admissionContainer{max-width:1000px;margin:0 auto;padding:0 16px}
+
+#submitBtn {
   background: #2563eb;
   color: white;
   padding: 12px 18px;
@@ -365,6 +707,9 @@ select {
 
 
 
+
+
+
     /* ====== Noticeboard ====== */
     .notice{padding:12px;border-radius:10px;background:linear-gradient(90deg,#fff,#fbfcff);border-left:4px solid var(--primary)}
     .notice small{color:var(--muted)}
@@ -372,9 +717,19 @@ select {
    
 
     /* ====== Contact ====== */
-    .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:16px}
+    .contact-grid{display:grid;grid-template-columns:1fr 540px;gap:16px}
     form .row{display:flex;gap:10px}
-    input,textarea,select{width:100%;padding:10px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+	
+    input,textarea,select{
+	width:100%;
+	margin:5px;
+	padding:10px;
+	border:1px solid #e6e9ef;
+	border-radius:8px;
+	font-size:14px}
+	
+	
+	
     button{background:var(--primary);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
 
     /* ====== Footer ====== */
@@ -391,14 +746,17 @@ select {
     }
 	
 	
-	 /* ====== Gallery ফটো গ্যালারী ====== */
+
+
+
+
+
+
+
+/* ====== Gallery ফটো গ্যালারী ====== */
 	
 	 body{font-family: sans-serif; margin:20px; background:#f5f5f5;}
   h2{text-align:left; margin-bottom:20px;}
-
- 
-
-
 /* ===============================
    GALLERY 2 – FULL CSS
    =============================== */
@@ -538,15 +896,28 @@ select {
 }
 
 
-
-  
-  
-
 /* ====== গ্যালারিী শেষ  ====== */  
   
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   
-/* ====== মেসেজ বাটন শুরু  ====== */  
+/* ====== মেসেজ বাটন শুরু  ====== */ 
+
+.bg_contuct {
+  background: #034bbf3b;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,24,48,0.06);
+  text-align: left; /* ছবির নিচের লেখা সেন্টারে */
+}
   
   #messageBtn {
   background: #2563eb;
@@ -615,6 +986,130 @@ select {
   transform: scale(0.95);
 }
 
+
+
+
+
+
+/* ====== ক্যালেন্ডার শুরু  ====== */  
+
+.google-calendar-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .google-calendar-container iframe {
+        height: 400px; /* মোবাইলের জন্য উচ্চতা কমিয়ে দেওয়া */
+    }
+}
+
+.cardGoogleCalender {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(12, 24, 48, 0.06);
+}
+
+
+
+.cardUpcoming {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,24,48,0.06);
+  text-align: left; /* ছবির নিচের লেখা সেন্টারে */
+}
+
+/* স্টুডেন্ট লিস্ট এখান থেকে */
+
+.studentProfile{
+ border-top: 1px solid #000000;
+ }
+
+.student-list {
+  width: 300px; /* পাশে বসানোর জন্য */
+ 
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.student-item:hover {
+  transform: translateX(5px);
+  background: #f5f5f5;
+}
+
+.student-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-info h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.student-info p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+
+
+
+
+
+
+
+
+/* ====== সোসাইল আইকন শুরু  ====== */  
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: left;
+  margin-top: 30px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+  transform: translateY(-5px);
+}
+
+
+
+
+
 /* ====== টপ বেক বাটন শুরু  ====== */  
 
 #backToTop {
@@ -639,6 +1134,107 @@ select {
 
 	
 	
+/* ====== ফুটার সেকশন শুরু  ====== */  	
+	
+
+.school-footer {
+    background-color: #081342;
+    padding: 40px 20px 20px;
+    font-family: 'Arial', sans-serif;
+    border-top: 1px solid #fff;
+    color: #fbfbfb;
+}
+
+.footer-logo {
+    width: 80px; /* আপনার পছন্দমতো সাইজ দিন */
+    height: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* বাম পাশের অংশ */
+.footer-left h3 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+.footer-left p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* মাঝখানের লিংকস */
+.footer-middle h4 {
+    border-bottom: 2px solid #1a237e;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+
+.links-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.links-grid ul {
+  list-style: none;      /* বুলেট সরানোর জন্য */
+  padding: 0;
+}
+
+.links-grid a {
+  color: #ffffff;        /* টেক্সট সাদা */
+  text-decoration: none; /* আন্ডারলাইন সরানো */
+  transition: all 0.3s ease; /* স্মুথ হোভার */
+  display: inline-block;
+  padding: 5px 0;
+}
+
+/* Hover Effect */
+.links-grid a:hover {
+  color: #ffb400;        /* হোভার হলে হলুদ */
+  transform: translateX(5px); /* হালকা ডানে সরবে */
+}
+
+
+
+/* ভিজিটর বক্স */
+.pathshala-box {
+    border: 1px solid #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #fff;
+}
+
+.visitor-counter .count {
+    font-size: 30px;
+    font-weight: bold;
+    color: #06e206;
+}
+
+/* নিচের ক্রেডিট লাইন */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
+    font-size: 13px;
+}
+	
+	
+	
+	
+	
+	
+	
+	
   </style>
 
 <!-- CSS 
@@ -648,6 +1244,9 @@ select {
 
 
 <body>
+
+
+
 
 
 
@@ -669,6 +1268,7 @@ select {
         <ul>
           <li><a href="#slides">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#teachers">Teacher</a></li>
           <li><a href="#academic">Academic</a></li>
           <li><a href="#admission">Admission</a></li>
           <li><a href="#gallery2">Gallery</a></li>
@@ -679,11 +1279,8 @@ select {
     </div>
   </header>
   
-  
-  
-  
+    
   <!-- TOP SLIDER -->
-  
 <section id="slides">
 <section class="top-slider">
   <div class="slides">
@@ -717,12 +1314,15 @@ select {
     <a href="#admission" class="hero-btn">ভর্তি চলছে</a>
   </div>
   
-  
+ 
    <!-- dots -->
   <div class="dots"></div>
   
 </section>
 
+
+
+<!-- Notice Section -->
  <div class="notice-wrapper">
   <div class="notice-label">নোটিশ 📢</div>
   <div class="notice-track">
@@ -736,21 +1336,45 @@ select {
 <!-- Main Design Section -->
   <main class="container" id="home">
   
-    <section class="hero">
-      <div class="hero-card">
+  
+  
+<!-- Welcome Section --> 
+    <section class="welcome">
+      <div class="welcome-box">
+	  
+	  
         <h1>Welcome to Our School </h1>
-        <p>আপনার সন্তানের সেরা শিক্ষাজীবনের জন্য আধুনিক শিক্ষা, উন্নত পরিকাঠামো এবং অভিজ্ঞ শিক্ষককোষ।</p>
-        <div class="stats">
-          <div class="stat"><b>৪৫০+</b><small>শিক্ষার্থী</small></div>
-          <div class="stat"><b>১৩</b><small>শিক্ষক</small></div>
-          <div class="stat"><b>৩</b> <small>শিক্ষা বিভাগ <br>( বিজ্ঞান, মানবিক ও ব্যবসায় শিক্ষা শাখা ) </small></div>
-        </div>
+        <p>​"আধুনিক শিক্ষা, উন্নত পরিকাঠামো এবং অভিজ্ঞ শিক্ষককোষের সমন্বয়ে—আমরা গড়ছি আপনার সন্তানের আগামীর ভিত্তি। সুশিক্ষা আর নৈতিকতার হাত ধরে, আপনার সন্তান পা রাখুক সাফল্যের শিখরে।"</p>
+		
+		
+		
+		<div class="stats"> 
 
-        <div style="margin-top:16px;display:flex;gap:8px">
-          <a href="#admission" class="cta">Admission</a>
-          <a href="#contact" style="padding:10px 12px;border-radius:10px;background:#fff;color:#111; font-weight:700">Contact</a>
+  <div class="stat">
+    <i class="fas fa-user-graduate"></i>
+    <b class="counter" data-target="450" data-plus="true">0</b>
+    <small>শিক্ষার্থী</small>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-chalkboard-teacher"></i>
+    <b class="counter" data-target="13">0</b>
+    <small>শিক্ষক</small>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-book"></i>
+    <b class="counter" data-target="3">0</b>
+    <small>শিক্ষা বিভাগ <br>বিজ্ঞান, মানবিক, ব্যবসায় শিক্ষা</small>
+  </div>
+
+</div>
+        <div style="margin-top:100px;display:center;gap:18px">
+		
+          <a href="#admission" class="admitionBtn">Admission</a>
+         
         </div>
-      </div>
+</div>
 	  
 
       <aside>
@@ -760,7 +1384,7 @@ select {
             
 			<div class="accivment">
 			<h3>আমাদের গর্ব</h3>
-			<img src="images/bushra.jpeg" alt="Zone Commander" class="student-img">
+			<img src="images/bushra.jpeg" alt="Bushra" class="student-img">
 			<h4><u>ফৌজিয়া রহমান চৌধুরি বুশরা</u></h4>
 			<p style="text-align: justify;">২০২৫ সালের এসএসসি ও সমমানের পরীক্ষায় মানবিক শাখা থেকে বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় এর কৃতি ছাত্রী চট্টগ্রাম বোর্ডে ৩য় তম স্থান অর্জন করায় ফৌজিয়া রহমান চৌধুরি বুশরাকে আন্তরিক অভিনন্দন ও শুভেচ্ছা।</p>
 		</div>
@@ -771,197 +1395,275 @@ select {
     </section>
 	
 	
+	
+	
+	<main class="aboutContainer"> 
+	
 
-    <section id="about">
+    <section id="about" class="page-section">
+	
       <div class="grid two-col">
         <div>
 		
-		
           <h2><br>About Us </h2>
 		  
-		  
+		  <div class="card">
 		  
 		  <p style="text-align: justify;" > <b><u>ইতিহাস:</u></b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয় টি লক্ষীছড়ি জোনের বাইন্যাছোলা আর্মি ক্যাম্প সংলগ্ন লক্ষীছড়ি উপজেলা, খাগড়াছড়ি ও ফটিকছড়ি উপজেলা, চট্টগ্রামের মধ্যবর্তী স্থানে অবস্থিত । স্কুলটি এই প্রত্যন্ত অঞ্চলের উভয় উপজেলার পাহাড়ী ও বাঙ্গালী ছেলে মেয়েদের শিক্ষার সুযোগ সৃষ্টির লক্ষ্যে <b>বাংলাদেশ সেনাবাহিনী</b> কর্তৃক ২৯ অক্টোবর ২০১৮ সালে প্রতিষ্ঠিত হয়। প্রতিষ্ঠা লগ্ন থেকে স্থানীয় গুরুত্বপূর্ণ ব্যক্তিবর্গ স্কুলের সার্বিক উন্নয়ন, শৃংখলা ও শিক্ষার মান উন্নয়নে নানাভাবে অবদান রেখে যাচ্ছে। প্রাথমিকভাবে ১৯৪ জন পাহাড়ী, ১৯৩ জন বাঙ্গালী সর্বমোট ৩৮৭ জন শিক্ষার্থী, ১ জন প্রধান শিক্ষক এবং ৮ জন সহকারী শিক্ষক নিয়ে শুরু হয়েছিল । প্রতিষ্ঠার পর হতে এখন পর্যন্ত মানসম্মত শিক্ষা প্রদান করে আসছে। </p>
 		  
           
-          <p style="text-align: justify;" ><b><u>ভিশন:</u></b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টিকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় হওয়ার প্রচেষ্টা করা, যেখানে পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে উঠবে এবং সমাজে অর্থপূর্ণ অবদান রাখবে।</p>
+          <p style="text-align: justify;" ><b><br><u>ভিশন:</u></b> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টিকে বাংলাদেশের শীর্ষস্থানীয় বিদ্যালয় হওয়ার প্রচেষ্টা করা, যেখানে পাহাড়ি ও বাঙালি প্রত্যেক শিক্ষার্থী উন্নত শিক্ষা, সামাজিক মূল্যবোধসম্পন্ন সুদক্ষ নাগরিক হিসেবে গড়ে উঠবে এবং সমাজে অর্থপূর্ণ অবদান রাখবে।</p>
 		  
-		   <p style="text-align: justify;" ><b><u>আমাদের উদ্দেশ্য:</u></b> এই প্রতিষ্ঠানের লক্ষ্য শিক্ষার্থীদের সার্বিক উন্নয়ন নিশ্চিত করা। কার্যকর শিক্ষাদান, মুল্যবোধ ও সৎচরিত্র গঠন।</p>
-		  
-          <div class="cards">
-			<div class="card">
-			<img src="images/z_comd.jpeg" alt="Zone Commander" class="card-img">
-			<h4><u>সভাপতির বক্তব্য</u></h4>
-			<p style="text-align: justify;">বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টি শুধু একটি শিক্ষা প্রতিষ্ঠান নয়, বরং এটি পাহাড়ি ও বাঙালি সম্প্রদায়ের মধ্যে শিক্ষা, সম্প্রীতি ও মানবিক মূল্যবোধের এক অনন্য মিলনস্থল। দুর্গম পাহাড়ি অঞ্চলের শিক্ষাবঞ্চিত ছেলেমেয়েদের জন্য মানসম্মত শিক্ষার সুযোগ সৃষ্টির মহান লক্ষ্য নিয়ে লক্ষীছড়ি সেনা জোন এর তত্বাবধানে এবং স্থানীয় গণ্যমান্য ব্যক্তিবর্গের আন্তরিক সহযোগিতায় ২০১৮ সালে এই বিদ্যালয়ের যাত্রা শুরু করে, যা আমাদের জন্য গর্বের ও অনুপ্রেরণার। <br><br>আমাদের লক্ষ্য শুধু পরীক্ষায় ভালো ফলাফল অর্জন নয়; বরং প্রতিটি শিক্ষার্থীকে নৈতিকতা, দেশপ্রেম, সহনশীলতা ও সামাজিক দায়িত্ববোধে বলীয়ান একজন সুদক্ষ নাগরিক হিসেবে গড়ে তোলা। পাহাড়ি ও বাঙালি শিক্ষার্থীরা যেন একে অপরের সংস্কৃতি ও মূল্যবোধকে সম্মান করে, পারস্পরিক সৌহার্দ্য বজায় রেখে এগিয়ে যেতে পারে—এটাই আমাদের শিক্ষা দর্শনের মূল ভিত্তি। <br><br> আমি দৃঢ়ভাবে বিশ্বাস করি, সম্মিলিত প্রচেষ্টা, সুশাসন ও সময়োপযোগী শিক্ষাব্যবস্থার মাধ্যমে বিদ্যালয়টি একদিন বাংলাদেশের শীর্ষস্থানীয় শিক্ষা প্রতিষ্ঠানে পরিণত হবে। এই বিদ্যালয় থেকে গড়ে ওঠা শিক্ষার্থীরাই ভবিষ্যতে সমাজ ও রাষ্ট্র গঠনে গুরুত্বপূর্ণ ভূমিকা রাখবে এই প্রত্যাশা ও বিশ্বাস নিয়েই আমরা সামনে এগিয়ে যেতে চাই। <br><br> পরিশেষে, বিদ্যালয়ের উন্নয়ন ও অগ্রযাত্রায় যাঁরা নিরলসভাবে সহযোগিতা করে যাচ্ছেন—বাংলাদেশ সেনাবাহিনী, শিক্ষকবৃন্দ, অভিভাবক, স্থানীয় গণ্যমান্য ব্যক্তি ও শুভানুধ্যায়ীদের প্রতি আমি আন্তরিক কৃতজ্ঞতা প্রকাশ করছি। <br><br>আসুন, আমরা সবাই মিলে এই বিদ্যালয়কে জ্ঞান, শৃঙ্খলা ও মানবিক মূল্যবোধের এক উজ্জ্বল আলোকবর্তিকায় পরিণত করি।</p>
-		</div>
+		   <p style="text-align: justify;" ><br><b><u>আমাদের উদ্দেশ্য:</u></b> এই প্রতিষ্ঠানের লক্ষ্য শিক্ষার্থীদের সার্বিক উন্নয়ন নিশ্চিত করা। কার্যকর শিক্ষাদান, মুল্যবোধ ও সৎচরিত্র গঠন।</p>
+		   
+		
+		 <div class="message-grid">
+		 
+	<!-- Chairman -->
+    
+    <div class="message-card">
+      <div class="profile">
+        <img src="images/z_comd.jpeg" alt="Zone Commander" class="card-img">
+        <div>
+         <h2 style=" font-size:110%; white-space:nowrap; display:inline-flex; align-items:baseline;"> লেঃ কর্ণেল মোঃ তাজুল ইসলাম, <span style="font-size:80%; font-weight:bold; margin-left:4px;"> পিএসসি, জি  </span></h2>
 
-		<div class="card">
-			<img src="images/head_teacher.png" alt="Principal" class="card-img">
-			<h4><u>প্রধান শিক্ষকের বক্তব্য</u></h4>
-			<p style="text-align: justify;"> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়ের পক্ষ থেকে সকল শিক্ষক, শিক্ষার্থী, অভিভাবক ও শুভানুধ্যায়ীদের জানাই আন্তরিক শুভেচ্ছা ও অভিনন্দন। <br> আমাদের বিদ্যালয়টি খাগড়াছড়ি জেলার লক্ষীছড়ি উপজেলার লক্ষীছড়ি ইউনিয়নের বাইন্যাছোলা গ্রাম এবং চট্টগ্রাম জেলার ফটিকছড়ি উপজেলার কাঞ্চননগর ইউনিয়নের মানিকপুর গ্রামের সীমান্তবর্তী বাইন্যাছড়া সেনা ক্যাম্প এলাকায় অবস্থিত। দীর্ঘদিন ধরে এই অঞ্চলের শিক্ষার্থীদের কাছাকাছি কোনো মাধ্যমিক বিদ্যালয় না থাকায় শিক্ষালাভ ছিল অত্যন্ত কষ্টসাধ্য ও দুরূহ। অনেকেই দীর্ঘপথ পায়ে হেঁটে দূরবর্তী বিদ্যালয়ে যেত, ফলে অনেক প্রতিভাবান শিক্ষার্থী মাঝপথেই ঝরে পড়ত। এই প্রেক্ষাপটে, এলাকার শিক্ষানুরাগী ব্যক্তিবর্গ এবং গুইমারা রিজিয়নস্থ; লক্ষীছড়ি সেনা জোনের অক্লান্ত প্রচেষ্টায় ২০১৮ সালের ২৯ অক্টোবর প্রতিষ্ঠিত হয় 'বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়"। </p>
-			</div>		
-		</div>
-	</div>
-		
-		
-		
-
-        <div class="card">
-          <h3><u><br>Teachers</u></h3>
-          <div style="display:grid;gap:10px;margin-top:8px">
-            <div class="teacher">
-              <div class="avatar">নিবিড়</div>
-              <div>
-                <strong>মোঃ নাজমুল হুদা (নিবিড়)</strong>
-                <div style="font-size:13px;color:var(--muted)">প্রধান শিক্ষক</div>
-              </div>
-            </div>
-			
-            <div class="teacher">
-              <div class="avatar">এনামুল</div>
-              <div>
-                <strong>মোঃ এনামুল মোস্তফা</strong>
-                <div style="font-size:13px;color:var(--muted)">সহকারি প্রধান শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">মনছুর</div>
-              <div>
-                <strong>মোঃ মনছুর আলম</strong>
-                <div style="font-size:13px;color:var(--muted)">ইংরেজি শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">নুর</div>
-              <div>
-                <strong>সৈয়দা রায়হাতুন নুর</strong>
-                <div style="font-size:13px;color:var(--muted)">সামাজিক বিজ্ঞান শিক্ষিকা</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">সুমন</div>
-              <div>
-                <strong>সুমন চাকমা</strong>
-                <div style="font-size:13px;color:var(--muted)">আইসিটি শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">জাহাঙ্গীর</div>
-              <div>
-                <strong>মোঃ জাহাঙ্গীর আলম</strong>
-                <div style="font-size:13px;color:var(--muted)">সামাজিক বিজ্ঞান শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">নিপন</div>
-              <div>
-                <strong>নিপন চাকামা</strong>
-                <div style="font-size:13px;color:var(--muted)">গনিত শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">স্বপ্না</div>
-              <div>
-                <strong>তাহমিদা নাঈম স্বপ্না</strong>
-                <div style="font-size:13px;color:var(--muted)">বাংলা শিক্ষিকা</div>
-              </div>
-            </div>
-		
-		<div class="teacher">
-              <div class="avatar">হাসানুল</div>
-              <div>
-                <strong>মোঃ হাসানুল করিম</strong>
-                <div style="font-size:13px;color:var(--muted)">ইসলাম ও নৈতিক শিক্ষা</div>
-              </div>
-            </div>
-			
-			
-			<div class="teacher">
-              <div class="avatar">নাজমুল</div>
-              <div>
-                <strong>মোঃ নাজমুল হক ভূঁইয়া</strong>
-                <div style="font-size:13px;color:var(--muted)">ভৌত বিজ্ঞান শিক্ষক</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">তরিকুল</div>
-              <div>
-                <strong>মোঃ তরিকুল ইসলাম</strong>
-                <div style="font-size:13px;color:var(--muted)">ভৌত বিজ্ঞান শিক্ষক</div>
-              </div>
-            </div>
-			
-			
-			<h3><u>Office Staff</u></h3>
-			
-			<div class="teacher">
-              <div class="avatar">কালাম</div>
-              <div>
-                <strong>মো: আবুল কালাম</strong>
-                <div style="font-size:13px;color:var(--muted)">শারীরিক শিক্ষা</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">ইয়াছিন</div>
-              <div>
-                <strong>মোঃ ইয়াছিন </strong>
-                <div style="font-size:13px;color:var(--muted)">কম্পিউটার অপারেটর</div>
-              </div>
-            </div>
-			
-			<div class="teacher">
-              <div class="avatar">রিনা</div>
-              <div>
-                <strong>রিনা দাশ </strong>
-                <div style="font-size:13px;color:var(--muted)">আয়া</div>
-              </div>
-            </div>
-			
-			
-			
-            <div class="teacher">
-              <div class="teacher-more" style="font-size:13px;color:var(--muted);margin-top:6px"></div>
-            </div>
-			
-          </div>
+          <span>সভাপতি</span>
         </div>
       </div>
-    </section>
+
+		<h4><u>সভাপতির বক্তব্য</u></h4>
+     <p style="text-align: justify;">বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়টি শুধু একটি শিক্ষা প্রতিষ্ঠান নয়, বরং এটি পাহাড়ি ও বাঙালি সম্প্রদায়ের মধ্যে শিক্ষা, সম্প্রীতি ও মানবিক মূল্যবোধের এক অনন্য মিলনস্থল। দুর্গম পাহাড়ি অঞ্চলের শিক্ষাবঞ্চিত ছেলেমেয়েদের জন্য মানসম্মত শিক্ষার সুযোগ সৃষ্টির মহান লক্ষ্য নিয়ে <b>লক্ষীছড়ি সেনা জোন</b> এর তত্বাবধানে এবং স্থানীয় গণ্যমান্য ব্যক্তিবর্গের আন্তরিক সহযোগিতায় ২০১৮ সালে এই বিদ্যালয়ের যাত্রা শুরু করে, যা আমাদের জন্য গর্বের ও অনুপ্রেরণার। <br><br>আমাদের লক্ষ্য শুধু পরীক্ষায় ভালো ফলাফল অর্জন নয়; বরং প্রতিটি শিক্ষার্থীকে নৈতিকতা, দেশপ্রেম, সহনশীলতা ও সামাজিক দায়িত্ববোধে বলীয়ান একজন সুদক্ষ নাগরিক হিসেবে গড়ে তোলা। পাহাড়ি ও বাঙালি শিক্ষার্থীরা যেন একে অপরের সংস্কৃতি ও মূল্যবোধকে সম্মান করে, পারস্পরিক সৌহার্দ্য বজায় রেখে এগিয়ে যেতে পারে—এটাই আমাদের শিক্ষা দর্শনের মূল ভিত্তি। <br><br> আমি দৃঢ়ভাবে বিশ্বাস করি, সম্মিলিত প্রচেষ্টা, সুশাসন ও সময়োপযোগী শিক্ষাব্যবস্থার মাধ্যমে বিদ্যালয়টি একদিন বাংলাদেশের শীর্ষস্থানীয় শিক্ষা প্রতিষ্ঠানে পরিণত হবে। এই বিদ্যালয় থেকে গড়ে ওঠা শিক্ষার্থীরাই ভবিষ্যতে সমাজ ও রাষ্ট্র গঠনে গুরুত্বপূর্ণ ভূমিকা রাখবে এই প্রত্যাশা ও বিশ্বাস নিয়েই আমরা সামনে এগিয়ে যেতে চাই। <br><br> পরিশেষে, বিদ্যালয়ের উন্নয়ন ও অগ্রযাত্রায় যাঁরা নিরলসভাবে সহযোগিতা করে যাচ্ছেন—বাংলাদেশ সেনাবাহিনী, শিক্ষকবৃন্দ, অভিভাবক, স্থানীয় গণ্যমান্য ব্যক্তি ও শুভানুধ্যায়ীদের প্রতি আমি আন্তরিক কৃতজ্ঞতা প্রকাশ করছি। <br><br>আসুন, আমরা সবাই মিলে এই বিদ্যালয়কে জ্ঞান, শৃঙ্খলা ও মানবিক মূল্যবোধের এক উজ্জ্বল আলোকবর্তিকায় পরিণত করি।</p>
+	  
+    </div>
+
+    <!-- Head Teacher -->
+	<div class="message-card">
+      <div class="profile">
+        <img src="images/head_teacher.png" alt="Principal" class="card-img">
+        <div>
+		 <h2 style=" font-size:110%; white-space:nowrap; display:inline-flex; align-items:baseline;"> মোঃ নাজমুল হুদা (নিবিড়) <span style="font-size:80%; font-weight:bold; margin-left:4px;"> </span></h2>
+          
+          <span>প্রধান শিক্ষক</span>
+        </div>
+      </div>
+	  
+	<h4><u>প্রধান শিক্ষকের বক্তব্য</u></h4>
+     <p style="text-align: justify;"> বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়ের পক্ষ থেকে সকল শিক্ষক, শিক্ষার্থী, অভিভাবক ও শুভানুধ্যায়ীদের জানাই আন্তরিক শুভেচ্ছা ও অভিনন্দন। <br><br> আমাদের বিদ্যালয়টি খাগড়াছড়ি জেলার লক্ষীছড়ি উপজেলার লক্ষীছড়ি ইউনিয়নের বাইন্যাছোলা গ্রাম এবং চট্টগ্রাম জেলার ফটিকছড়ি উপজেলার কাঞ্চননগর ইউনিয়নের মানিকপুর গ্রামের সীমান্তবর্তী বাইন্যাছড়া সেনা ক্যাম্প এলাকায় অবস্থিত। দীর্ঘদিন ধরে এই অঞ্চলের শিক্ষার্থীদের কাছাকাছি কোনো মাধ্যমিক বিদ্যালয় না থাকায় শিক্ষালাভ ছিল অত্যন্ত কষ্টসাধ্য ও দুরূহ। অনেকেই দীর্ঘপথ পায়ে হেঁটে দূরবর্তী বিদ্যালয়ে যেত, ফলে অনেক প্রতিভাবান শিক্ষার্থী মাঝপথেই ঝরে পড়ত। এই প্রেক্ষাপটে, এলাকার শিক্ষানুরাগী ব্যক্তিবর্গ এবং গুইমারা রিজিয়নস্থ; লক্ষীছড়ি সেনা জোনের অক্লান্ত প্রচেষ্টায় ২০১৮ সালের ২৯ অক্টোবর প্রতিষ্ঠিত হয় 'বাইন্যাছোলা-মানিকপুর উচ্চ বিদ্যালয়"। </p>
+	 
+		</div>			
+	</div>		
+</div>
+</div>
+</section>
+</main>
+
+		
+	
+	 <section id="teachers">
+  <h2 class="section-title">Our Teachers</h2>
+
+  <div class="teacher-grid">
+  
+
+	<div class="teacher-card" onclick="openProfile('nibir')">
+  <img src="images/teachers/t_nibir.png">
+  <div class="teacher-info">
+    <strong>মোঃ নাজমুল হুদা (নিবিড়)</strong>
+    <div>প্রধান শিক্ষক</div>
+  </div>
+</div>
+
+
+<div class="teacher-card" onclick="openProfile('enamul')">
+  <img src="images/teachers/t_enamul.png">
+  <div class="teacher-info">
+    <strong>মোঃ এনামুল মোস্তফা</strong>
+    <div>সহকারী প্রধান শিক্ষক</div>
+  </div>
+</div>
+
+
+<div class="teacher-card" onclick="openProfile('monsur')">
+  <img src="images/teachers/t_monsur.png">
+  <div class="teacher-info">
+    <strong>মোঃ মনছুর আলম</strong>
+    <div>ইংরেজি শিক্ষক</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('raihatun')">
+  <img src="images/teachers/t_raihatun.png">
+  <div class="teacher-info">
+    <strong>সৈয়দা রায়হাতুন নুর</strong>
+    <div>সামাজিক বিজ্ঞান শিক্ষিকা</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('sumon')">
+  <img src="images/teachers/t_sumon.png">
+  <div class="teacher-info">
+    <strong>সুমন চাকমা</strong>
+    <div>আইসিটি শিক্ষক</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('abul_kalam')">
+  <img src="images/teachers/t_abul_kalam.png">
+  <div class="teacher-info">
+    <strong>মো: আবুল কালাম</strong>
+    <div>শারীরিক শিক্ষা</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('jahangir')">
+  <img src="images/teachers/t_jahangir.png">
+  <div class="teacher-info">
+    <strong>মোঃ জাহাঙ্গীর আলম</strong>
+    <div>সামাজিক বিজ্ঞান শিক্ষক</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('nipon')">
+  <img src="images/teachers/t_nipon.png">
+  <div class="teacher-info">
+    <strong>নিপন চাকামা</strong>
+    <div>গনিত শিক্ষক</div>
+  </div>
+</div>
+
+
+<div class="teacher-card" onclick="openProfile('sopna')">
+  <img src="images/teachers/t_sopna.png">
+  <div class="teacher-info">
+    <strong>তাহমিদা নাঈম স্বপ্না</strong>
+    <div>বাংলা শিক্ষিকা</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('hasanul')">
+  <img src="images/teachers/t_hasanul.png">
+  <div class="teacher-info">
+    <strong>মোঃ হাসানুল করিম</strong>
+    <div>ইসলাম ও নৈতিক শিক্ষা</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('nazmul')">
+  <img src="images/teachers/t_nazmul.png">
+  <div class="teacher-info">
+    <strong>মোঃ নাজমুল হক ভূঁইয়া</strong>
+    <div>ভৌত বিজ্ঞান শিক্ষক</div>
+  </div>
+</div>
+	
+	
+	<div class="teacher-card" onclick="openProfile('toriqul')">
+  <img src="images/teachers/t_tariqul.png">
+  <div class="teacher-info">
+    <strong>মোঃ তরিকুল ইসলাম</strong>
+    <div>ভৌত বিজ্ঞান শিক্ষক</div>
+  </div>
+</div>
+
+ 
+
+
+
+    <!-- একইভাবে আরও টিচার যোগ করবে -->
+
+  </div>
+  
+  <h2 class="section-title">Office Staff</h2>
+  <div class="teacher-grid">
+  
+  
+ 
+
+ <div class="teacher-card" onclick="openProfile('os_easin')">
+  <img src="images/teachers/t_yasin.png">
+  <div class="teacher-info">
+    <strong>মোঃ ইয়াছিন</strong>
+    <div>কম্পিউটার অপারেটর</div>
+  </div>
+</div>
+
+<div class="teacher-card" onclick="openProfile('os_rina_rani')">
+  <img src="images/teachers/profile.png">
+  <div class="teacher-info">
+    <strong>রিনা রানী দাস</strong>
+    <div>আয়া</div>
+  </div>
+</div>
+  
+  
+	
+	
+	 <div class="teacher-card">
+    
+    </div>
+	
+	 <div class="teacher-card">
+    
+    </div>
+	
+	 <div class="teacher-card">
+    
+    </div>
 	
 	
 	
+	</div>
+  
+</section>
+
+	<div id="profileModal" class="modal">
+  <div class="modal-content profile-layout">
+
+    <span class="close" onclick="closeProfile()">&times;</span>
+	
+
+    <div class="profile-left">
+      <img id="pImg" class="profile-img">
+    </div>
+
+    <div class="profile-right">
+      <h3 id="pName"></h3>
+      <p class="post" id="pPost"></p>
+      <hr>
+      <p id="pDetails"></p>
+    </div>
+
+  </div>
+</div>
+	
+	
+	
+	
+
 
     <section id="academic">
       <h2><br>Academic</h2>
       <div class="grid two-col">
         <div>
-          <div class="card">
-            <h4>Class Routine</h4>
-            <p>সকল ক্লাসের রুটিন এখানে পাওয়া যাবে </p>
-            <table style="width:100%;border-collapse:collapse;margin-top:8px">
-              <thead>
-                <tr style="text-align:left;color:var(--muted)"><th>Class</th><th>Time</th><th>Subject</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>৬ষ্ঠ শ্রেণী</td><td>১০:০০ - ১০:৪৫</td><td>বাংলা</td></tr>
-                <tr><td>সপ্তম শ্রেণী</td><td>১০:০০ - ১০:৪৫</td><td>ইংরেজি</td></tr>
-                <tr><td>অষ্টম শ্রেণী</td><td>১১:০০ - ১১:৪৫</td><td>অংক</td></tr>
-                <tr><td>নবম শ্রেণী</td><td>১২:০০ - ১২:৪৫</td><td>সাধারণ বিজ্ঞান</td></tr>
-                <tr><td>দশম শ্রেণী</td><td>০১:০০ - ০১:৪৫</td><td>ধর্ম</td></tr>
-              </tbody>
-            </table>
-          </div>
 
          
 		 <div style="display:flex;gap:12px;margin-top:12px">
+		 
+		  <div class="card" style="flex:1">
+              <h4>Class Routine</h4>
+              <p>সকল ক্লাসের রুটিন এখানে পাওয়া যাবে</p>
+			 
+			  <a 
+				href="routine.html"
+				class="download-btn"
+				target="_blank"	>
+				📥 View Class Routine
+				</a>
+			
+            </div>
+		 
+		 
+		 
             <div class="card" style="flex:1">
               <h4>Syllabus</h4>
               <p>ক্লাসের সিলেবাস ডাউনলোড করতে পারবে (PDF)</p>
@@ -975,43 +1677,76 @@ select {
 			
             </div>
 		
-           <div class="card" style="width:180px">
+           <div class="card" style="width:480px">
 			<h4>Results</h4>
-				<p><small>পরীক্ষার ফলাফল আপলোড করা হয়েছে</small></p>
+			
+				
+				<ul id="resultUpdate" style="padding-left:18px;color:#000000">Loading.....</ul>
 
 					<a
 						href="https://drive.google.com/file/d/19-BM0RFDNg67dfiPjdya_ULIJCFe_Itn/preview"
 						class="result-btn"
 						target="_blank">View Result</a>
 					</div>
-
-			
-			
 			
           </div>
         </div>
+		
+		
+
+ 
 
      
 	
-	<aside class="card">
-		<h4>Upcoming Events</h4>
-		<ul id="eventsList" style="padding-left:18px;color:var(--muted)">
-				Loading.....
-		</ul>
+	<aside >
+	
+	<div>        
+		<div style="display:flex;gap:12px;margin-top:0px">
+		 
+		<div class="cardGoogleCalender" style="flex:1.8">
+              <h4>Academic Calendar</h4>
+              
+			 <div class="google-calendar-container">
+			 
+			<iframe src="https://calendar.google.com/calendar/embed?src=en.bd%23holiday%40group.v.calendar.google.com&ctz=Asia%2FDhaka" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>	
+			</div> 
+ 			
+        </div>
+		
+    <div class="cardUpcoming" style="flex:.95">
+              <h4>Upcoming Events</h4>
+				<ul id="eventsList" style="padding-left:18px;color:#000000">Loading.....</ul>	
+	
+				<h4 class="studentProfile"><br>Students Profile</h4>
+
+		<div style="display:flex; gap:20px;">
+			<div class="sidebar">
+				<!-- Small Slide -->
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRwM0P_qjcpdAzZFqlnJF1nbPNHNKik6j7PPyt4K_3_R3mXEGK_rjSBkEhHibHSBz25vIN50hrWb8S_/pubembed?start=true&loop=true&delayms=10000" frameborder="0" width="450" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+			</div>
+		</div>		
+    </div>
+					
+        </div>	  
+    </div>	
+		
+		
 	</aside>
 
       </div>
     </section>
 	
+	
+	
 
 
 <!-- Admission Form -->
-
+<main class="admissionContainer"> 
     <section id="admission">
       <h2><br>Admission</h2>
 	 
       <div class="card">
-        <p>আবেদন ফি: ৫০০ টাকা (অনুগ্রহ করে ব্যাংক/অফলাইন পদ্ধতিতে জমা দিন)। নিচের ফরম পূরণ করে সরাসরি আবেদন করতে পারেন।</p>
+        <p>অনুগ্রহ করে ব্যাংক/অফলাইনে আবেদন ফি জমা দিন এবং নিচের ফরম পূরণ করে সরাসরি আবেদন করুন।</p>
         <form id="admissionForm" onsubmit="submitAdmission(event)">
           <div class="row">
              <input type="text" name="name" id="name" placeholder="Full name" required>
@@ -1031,6 +1766,8 @@ select {
 			<input type="email" name="email" id="email" placeholder="Email">
 			<input type="tel" name="phone" id="phone" placeholder="Phone number">
 		  </div>
+		  
+		  
 		   <div style="margin-top:10px">
 				<textarea name="address" id="address" placeholder="Address" rows="3"></textarea>
 		   </div>
@@ -1044,7 +1781,7 @@ select {
       </div>
 	  
     </section>
-	
+</main>	
  
 
 
@@ -1114,23 +1851,18 @@ select {
 
 
 
-
-
-
-
-
-
-
-
  <!-- Contact Us শুরু এখান থেকে -->
 
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2><br>Contact Us</h2>
       <div class="contact-grid">
         <div>
-          <div class="card">
+          <div class="bg_contuct">
+		  
             <h4>Get in touch</h4>
-            <p style="color:var(--muted)">ঠিকানা: Manikpur, Kanchannagar, Fatikchhari , Chittagong, Bangladesh, 4350<br>Phone: 01678-280280, 01711-941685<br>Email: bmhs.edu@gmail.com</p>
+			
+            <p style="color:var(--muted)">Google Location</p>
+			
             <div style="margin-top:8px">
 			
 			<iframe 
@@ -1139,11 +1871,30 @@ select {
 			</iframe>
 			  
             </div>
+			
+			<div class="social-icons">
+				<a href="https://www.facebook.com/bmhs.edu/" target="_blank" aria-label="Facebook">
+				<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+				<i class="fab fa-x-twitter"></i>
+				</a>
+				<a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+				<i class="fab fa-youtube"></i>
+				</a>
+				<a href="https://wa.me/8801711941685" target="_blank" aria-label="WhatsApp">
+					<i class="fab fa-whatsapp"></i>
+					</a>
+</div>
+			
+			
+			
+			
           </div>
         </div>
 
      
-  <aside class="card">
+  <aside class="bg_contuct">
     <form id="messageForm" onsubmit="submitMessage(event)">
       <input type="text" name="msgName" id="msgName" placeholder="Your Name" required>
       <input type="email" name="msgEmail" id="msgEmail" placeholder="Your Email" required>
@@ -1164,25 +1915,96 @@ select {
     </section>
 
 	<!-- Contact Us শেষ এখান থেকে -->
-	
-
-
-
-
 
   </main>
   
 
-  <footer>
-    <div class="container">
-	<button id="backToTop" onclick="scrollToTop()">Home</button>
-      <div style="display:flex;justify-content:space-between;align-items:left;gap:12px;flex-wrap:wrap">
-        <div style="font-size:15px;"> &copy; <b>Bainnachola Manikpur High School</b> — 2018 - <span id="year"></span></div>
-        <div style="color:var(--muted)">Developed by: Sgt Mashidul, 32 Fd Regt Arty, Laxmichari Zone</div>
-      </div>
-	  
+
+<footer class="school-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <div class="school-info">
+                <img src="images/logo.png" alt="School Logo" class="footer-logo">
+                <div style="font-size:20px;"> &copy; <b>Bainnachola Manikpur High School</b> — 2018 - <span id="year"></span></div>
+            </div>
+            <p><i class="fas fa-phone"></i> Contact : 01678-280280, 01711-941685</p>
+            <p><i class="fas fa-envelope"></i> Email : bainasollahighschool@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address : Manikpur, Kanchannagar, Fatikchhari , Chittagong, Bangladesh, 4350</p>
+			
+        </div>
+
+        <div class="footer-middle">
+            <h4>Quick Links</h4>
+			
+          <div class="links-grid">
+    <ul>
+        <li><a href="http://www.dshe.gov.bd/" target="_blank">DSHE</a></li>
+        <li><a href="https://banbeis.gov.bd/" target="_blank">BANBEIS</a></li>
+        <li><a href="https://bangladesh.gov.bd/" target="_blank">BD National Portal</a></li>
+        <li><a href="https://moedu.gov.bd/" target="_blank">Ministry of Education</a></li>
+    </ul>
+    <ul>
+        <li><a href="https://web.bise-ctg.gov.bd/bisectg" target="_blank">Chattogram Board</a></li>
+        <li><a href="https://mopme.gov.bd/" target="_blank">Primary & Mass Education</a></li>
+        <li><a href="https://forms.gov.bd/" target="_blank">Form of BD. Govt</a></li>
+        <li><a href="#" target="_blank">Pathshala EIMS</a></li>
+    </ul>
+    <ul>
+        <li><a href="https://cu.ac.bd/" target="_blank">Chattogram University</a></li>
+	
+        <li><a href="https://www.du.ac.bd/" target="_blank">Dhaka University</a></li>
+		<li><a href="https://www.ugc.gov.bd/" target="_blank">UGC</a></li>
+        
+    </ul>
+</div>
+			
+			
+        </div>
+
+        <div class="footer-right">
+		
+		
+		
+            
+            <div class="pathshala-box">
+			
+			<p> Online Visitors </p>
+			
+			<div class="visitor-counter">
+  <div class="box">
+    <h4>Today</h4>
+    <span class="count" id="today">0</span>
+  </div>
+
+  <div class="box">
+    <h4>This Month</h4>
+    <span class="count" id="month">0</span>
+  </div>
+
+  <div class="box">
+    <h4>This Year</h4>
+    <span class="count" id="year">0</span>
+  </div>
+</div>
+				
+            </div>
+			
+			
+			
+			
+        </div>
     </div>
-  </footer>
+    
+    <div class="footer-bottom">
+        <p>Developed By <strong>Sgt Md Mashidul Islam</strong></p>
+        <p><strong>32 Field Regiment Artillery</strong></p>
+        <p>Contuct - <strong>01880-024106</strong></p>
+    </div>
+</footer>
+
+<button id="backToTop" onclick="scrollToTop()">Home</button>
+
+ 
   
 
   <!-- Modals / Simple JS UI -->
@@ -1211,13 +2033,86 @@ select {
  
 <!-- Java Script শুরু এখান থেকে -->
   <script>
+  
+  
+  
+// স্টুডেন্ট কাউন্টার===================
     
+	const counters = document.querySelectorAll('.counter');
 
+const startCounter = (counter) => {
+  const target = +counter.getAttribute('data-target');
+  const showPlus = counter.getAttribute('data-plus') === "true";
+  let count = 0;
+  const speed = 200;
+  const increment = target / speed;
+
+  const updateCount = () => {
+    if(count < target){
+      count += increment;
+      counter.innerText = Math.ceil(count);
+      requestAnimationFrame(updateCount);
+    } else {
+      counter.innerText = showPlus ? target + "+" : target;
+    }
+  };
+
+  updateCount();
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      startCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => {
+  observer.observe(counter);
+});
+
+
+	
+// ভিজিটর কাউন্টার===================	
+
+const todayEl = document.getElementById("today");
+const monthEl = document.getElementById("month");
+const yearEl = document.getElementById("year");
+
+const now = new Date();
+const todayKey = "today_" + now.toDateString();
+const monthKey = "month_" + (now.getMonth() + 1) + "_" + now.getFullYear();
+const yearKey = "year_" + now.getFullYear();
+
+// পুরানো ডাটা না থাকলে 0 সেট
+if (!localStorage.getItem(todayKey)) localStorage.setItem(todayKey, 0);
+if (!localStorage.getItem(monthKey)) localStorage.setItem(monthKey, 0);
+if (!localStorage.getItem(yearKey)) localStorage.setItem(yearKey, 0);
+
+// প্রতিবার রিফ্রেশে +1
+localStorage.setItem(todayKey, +localStorage.getItem(todayKey) + 1);
+localStorage.setItem(monthKey, +localStorage.getItem(monthKey) + 1);
+localStorage.setItem(yearKey, +localStorage.getItem(yearKey) + 1);
+
+// দেখানো
+todayEl.innerText = localStorage.getItem(todayKey);
+monthEl.innerText = localStorage.getItem(monthKey);
+yearEl.innerText = localStorage.getItem(yearKey);
+
+
+
+
+	
+	
+	
    
 
     // Admission form - since there's no backend, we'll store to localStorage as a demo
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSOyBdgUIcL8sTphlRsUPRh7nqjFGCQGssXyJvAw5YWrEgfSOVgtn3o98b70ROO_foZA/exec";
+//const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSOyBdgUIcL8sTphlRsUPRh7nqjFGCQGssXyJvAw5YWrEgfSOVgtn3o98b70ROO_foZA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxfCbcIGt2uNLEX4nCLBa7hkcK0JzT2E12hXG8GrcQsia6MZhKyjhD4B1csH-irmJNXRQ/exec";
 // Admission Form
 function submitAdmission(e){
   e.preventDefault();
@@ -1362,7 +2257,10 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 // নোটিশ বোড কন্ট্রোল কোড ==========================================================
 
- fetch("https://script.google.com/macros/s/AKfycbwaHGzYcv8OEyigbXyno4lMRDrowpClK6eo9DbjuD7Isl4oMOdr4zozpIFK46oRtQ_l/exec")
+ //fetch("https://script.google.com/macros/s/AKfycbwaHGzYcv8OEyigbXyno4lMRDrowpClK6eo9DbjuD7Isl4oMOdr4zozpIFK46oRtQ_l/exec")
+ 
+ fetch("https://script.google.com/macros/s/AKfycbyGpSH3bniyYR3njbrLq-qDal9_temUeka2DPGcCwXfZEkHCeZ2Nz3tHsohpGUbIjvTsw/exec?type=notice")
+
 
   .then(res => res.json())
   .then(data => {
@@ -1376,8 +2274,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
   
   
 
-  
- 
 
   
   
@@ -1386,7 +2282,9 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // আপকামিং ইভেন্ট কন্ট্রোল কোড ==========================================================
 
   document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://script.google.com/macros/s/AKfycbwI3Eywk9-L3PBAMWmqKfDLI5hI3a5A7_lI5jTI4t6fX6oMJx7bmlzMpgchuS8WblLWxQ/exec?type=events")
+  //fetch("https://script.google.com/macros/s/AKfycbwI3Eywk9-L3PBAMWmqKfDLI5hI3a5A7_lI5jTI4t6fX6oMJx7bmlzMpgchuS8WblLWxQ/exec?type=events")
+  
+  fetch("https://script.google.com/macros/s/AKfycbyGpSH3bniyYR3njbrLq-qDal9_temUeka2DPGcCwXfZEkHCeZ2Nz3tHsohpGUbIjvTsw/exec?type=events")
   
     .then(res => res.text()) // safest
     .then(text => {
@@ -1398,7 +2296,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
         console.error("JSON parse error:", e, text);
       }
 
-      const ul = document.getElementById("eventsList");
+	  const ul = document.getElementById("eventsList");
       ul.innerHTML = "";
 
       if (!data.length) {
@@ -1416,6 +2314,53 @@ document.getElementById("year").textContent = new Date().getFullYear();
       console.error("Events load failed:", err);
     });
 });
+
+
+
+
+
+// Result Update View কন্ট্রোল কোড ==========================================================
+
+  const sheetURL = "https://script.google.com/macros/s/AKfycbzAoPY8jpBqwSJJmyvl9OPOiy59Um5Dad0nOqoKThac_PVhxwK2PC_Apj6gF9hRCpijzg/exec";
+
+  fetch(sheetURL)
+    .then(res => res.json())
+    .then(data => {
+
+      const ul = document.getElementById("resultUpdate");
+      const btn = document.querySelector(".result-btn");
+
+      ul.innerHTML = "";
+
+      data.forEach(item => {
+
+        // Comments দেখানো
+        const li = document.createElement("li");
+        li.textContent = item.comment;
+        ul.appendChild(li);
+
+        // যদি Active = YES হয় তাহলে বাটনে লিংক বসবে
+        if(item.active === "YES"){
+          btn.href = item.pdf;
+          btn.target = "_blank";
+          btn.style.display = "inline-block"; // বাটন দেখাবে
+        }
+      });
+
+      // যদি কোন Active না থাকে
+      if(!btn.href){
+        btn.style.display = "none";
+      }
+
+    })
+    .catch(err => {
+      document.getElementById("resultUpdate").innerHTML = "Failed to load data";
+      console.error(err);
+    });
+
+
+
+
 
 
 
@@ -1470,6 +2415,314 @@ document.addEventListener('keydown', e=>{
   if(e.key === 'ArrowRight') g2Next();
   if(e.key === 'ArrowLeft') g2Prev();
 });
+
+
+
+// শিক্ষক প্রফাইল কন্ট্রোল এখানে=========================
+
+
+const teachers = {
+
+  nibir: {
+    name: "মোঃ নাজমুল হুদা (নিবিড়)",
+    post: "প্রধান শিক্ষক",
+    img: "images/teachers/t_nibir.png",
+    info: {
+      "পিতার নাম": "খোদা বক্স মন্ডল",
+      "মাতার নাম": "মোছা: নুরজাহান বেগম",
+      "জন্ম তারিখ": "  ",
+      "জাতীয় পরিচয়পত্র": " ",
+      "শিক্ষাগত যোগ্যতা": "অনার্স",
+      "যোগদানের তারিখ": " 2005-07-15 ",
+      "মোবাইল": " ",
+      "ইমেল": "nazmul@gmail.com"
+     
+    }
+  },
+
+  enamul: {
+    name: "মোঃ এনামুল মোস্তফা",
+    post: "সহকারী প্রধান শিক্ষক",
+    img: "images/teachers/t_enamul.png",
+    info: {
+      "পিতার নাম": "মোঃ ইউনুচ আলী",
+      "মাতার নাম": "রহিমা বেগম",
+      "জন্ম তারিখ": "১০ নভেম্বর ১৯৯৪",
+      "জাতীয় পরিচয়পত্র": "8238293750",
+      "শিক্ষাগত যোগ্যতা": "এম বি এ (ফিন্যান্স)",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01815166967",
+      "ইমেল": "anamulmostafa14@gmail.com"
+      
+    }
+  },
+ 
+  monsur: {
+    name: "মোঃ মনছুর আলম",
+    post: "ইংরেজি শিক্ষক",
+    img: "images/teachers/t_monsur.png",
+    info: {
+     "পিতার নাম": "মোঃ আবুল হোসেন ",
+      "মাতার নাম": "মোছা: রাবেয়া বেগম ",
+      "জন্ম তারিখ": " ১৬ মার্চ ১৯৮৯  ",
+      "জাতীয় পরিচয়পত্র": "1514710070318",
+      "শিক্ষাগত যোগ্যতা": "এম এ ইংরেজি সাহিত্য",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01660102574",
+      "ইমেল": "monsuralam1631989@gmail.com"
+      
+    }
+  },
+ 
+  raihatun: {
+    name: "সৈয়দা রায়হাতুন নুর",
+    post: "সামাজিক বিজ্ঞান শিক্ষিকা",
+    img: "images/teachers/t_raihatun.png",
+    info: {
+     "পিতার নাম": "সৈয়দ এনামুল কাশেম ",
+      "মাতার নাম": "লায়লা বেগম ",
+      "জন্ম তারিখ": " ০৫ নভেম্বর ১৯৯৫  ",
+      "জাতীয় পরিচয়পত্র": "3741990430",
+      "শিক্ষাগত যোগ্যতা": "বিএ এমএমএস",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01866588617",
+      "ইমেল": "syedanipa81@gmail.com"
+   
+    }
+  },
+ 
+  sumon: {
+    name: "সুমন চাকমা",
+    post: "আইসিটি বিষায়ক শিক্ষক",
+    img: "images/teachers/t_sumon.png",
+    info: {
+     "পিতার নাম": "সুশীল জীবন চাকমা ",
+      "মাতার নাম": "ইন্দ্ররানী চাকমা ",
+      "জন্ম তারিখ": " ০৬ ফেব্রুয়ারি ১৯৯৫  ",
+      "জাতীয় পরিচয়পত্র": "5961942314",
+      "শিক্ষাগত যোগ্যতা": "বিএসসি ইন সিএসই",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01869966340",
+      "ইমেল": "sumon.chakmacse@gmail.com"
+      
+    }
+  },
+  
+  
+  abul_kalam: {
+    name: "মোঃ আবুল কালাম ",
+    post: " শারিরিক শিক্ষক",
+    img: "images/teachers/t_abul_kalam.png",
+    info: {
+     "পিতার নাম": " ",
+      "মাতার নাম": " ",
+      "জন্ম তারিখ": "   ",
+      "জাতীয় পরিচয়পত্র": "5961942314",
+      "শিক্ষাগত যোগ্যতা": "বিএসসি ইন সিএসই",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01869966340",
+      "ইমেল": "sumon.chakmacse@gmail.com"
+      
+    }
+  },
+ 
+  jahangir: {
+    name: "মোঃ জাহাঙ্গীর আলম ",
+    post: "সামাজিক বিজ্ঞান শিক্ষক",
+    img: "images/teachers/t_jahangir.png",
+    info: {
+     "পিতার নাম": "মোঃ জসিম উদ্দিন ",
+      "মাতার নাম": "মোসাঃ জাহেদা বেগম ",
+      "জন্ম তারিখ": " ২১ অক্টোবর ১৯৯০ ",
+      "জাতীয় পরিচয়পত্র": "19908119457000078",
+      "শিক্ষাগত যোগ্যতা": "এমএসএস , অর্থণীতি",
+	  "যোগদানের তারিখ": " 2022-05-01 (YY-MM-DD)",
+      "মোবাইল": "01722403465",
+      "ইমেল": "jahangiralom2110@gmail.com"
+     
+    }
+
+  },
+ 
+  nipon: {
+    name: "নিপন চাকমা",
+    post: "গণিত শিক্ষক",
+    img: "images/teachers/t_nipon.png",
+    info: {
+     "পিতার নাম": "সুন্দর কুমার চাকমা ",
+      "মাতার নাম": "দীনলতা চাকমা ",
+      "জন্ম তারিখ": " ০৫ মার্চ ১৯৯৬  ",
+      "জাতীয় পরিচয়পত্র": "6416299706",
+      "শিক্ষাগত যোগ্যতা": "এমএসসি গণিত",
+	  "যোগদানের তারিখ": " 2023-12-03 (YY-MM-DD)",
+      "মোবাইল": "01621629894",
+      "ইমেল": "chakmanipon63@gmail.com"
+      
+    }
+  },
+ 
+  sopna: {
+    name: "তাহমিদা নাঈম স্বপ্না",
+    post: "বাংলা শিক্ষিকা",
+    img: "images/teachers/t_sopna.png",
+    info: {
+     "পিতার নাম": "মোহাম্মদ নুরুল আলম ",
+      "মাতার নাম": "নাছিমা আরা বেগম ",
+      "জন্ম তারিখ": " ০৫ ফেব্রুয়ারি ২০০১  ",
+      "জাতীয় পরিচয়পত্র": "8273840424",
+      "শিক্ষাগত যোগ্যতা": "বিএ অনার্স বাংলা" ,
+	  "যোগদানের তারিখ": " 2025-12-28 (YY-MM-DD)",
+      "মোবাইল": "01852684048",
+      "ইমেল": "tahmidanaim28@gmail.com"
+      
+    }
+  },
+ 
+  hasanul: {
+    name: "মোহাম্মদ হাসানুল করিম সোহান",
+    post: "সামাজিক বিজ্ঞান শিক্ষিকা",
+    img: "images/teachers/t_hasanul.png",
+    info: {
+     "পিতার নাম": "মোঃ রফিক ",
+      "মাতার নাম": " দিলোয়ার বেগম ",
+      "জন্ম তারিখ": " ০৩ ফেব্রুয়ারি ১৯৯৯  ",
+      "জাতীয় পরিচয়পত্র": "8714631176",
+      "শিক্ষাগত যোগ্যতা": "এমএ, কামিল, হাদিস ",
+      "যোগদানের তারিখ": " 2025-12-28 (YY-MM-DD)",
+      "মোবাইল": "01871-302696",
+      "ইমেল": "hasanulkarim942@gmail.com"
+      
+    }
+  },
+ 
+  nazmul: {
+    name: "মোহাম্মদ নাজমুল হক ভূইঁয়া",
+    post: "সামাজিক বিজ্ঞান শিক্ষক",
+    img: "images/teachers/t_nazmul.png",
+    info: {
+     "পিতার নাম": "মৃতঃ মোঃ শফিউল আলম ভুইঁয়া ",
+      "মাতার নাম": " হালিমা খাতুন ",
+      "জন্ম তারিখ": "   ",
+      "জাতীয় পরিচয়পত্র": "1515328416807",
+      "শিক্ষাগত যোগ্যতা": " বিএসসি, বিপিএড, (প্রথম শ্রেনী) ",
+      "যোগদানের তারিখ": " 2025-12-28 (YY-MM-DD)",
+      "মোবাইল": "01878-167245",
+      "ইমেল": " "
+      
+    }
+  },
+ 
+  toriqul: {
+    name: "মোঃ তরিকুল ইসলাম",
+    post: "সামাজিক বিজ্ঞান শিক্ষক",
+    img: "images/teachers/t_tariqul.png",
+    info: {
+     "পিতার নাম": "মোঃ আনারুল হক ",
+      "মাতার নাম": " মোহাছিনা বেগম ",
+      "জন্ম তারিখ": " ১৭ অক্টোবর ১৯৯৬  ",
+      "জাতীয় পরিচয়পত্র": "7351782870",
+      "শিক্ষাগত যোগ্যতা": " এমএসসি, রসায়ন ",
+      "যোগদানের তারিখ": " 2025-12-28 (YY-MM-DD)",
+      "মোবাইল": "01634883905",
+      "ইমেল": "tarekulislam622@gmail.com"
+      
+    }
+  },
+ 
+  os_easin: {
+    name: " মোহাম্মদ ইয়াছিন ",
+    post: " কম্পিউটার অপারেটর ",
+    img: "images/teachers/t_yasin.png",
+    info: {
+     "পিতার নাম": " মোঃ আব্দুল মোতালেব ",
+      "মাতার নাম": " শাহেনা আক্তার ",
+      "জন্ম তারিখ": " ১৪ জুন ১৯৯৮  ",
+      "জাতীয় পরিচয়পত্র": "6914671356",
+      "শিক্ষাগত যোগ্যতা": " এইচএসসি ",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "01830023168",
+      "ইমেল": "yasinarfat151999@gmail.com"
+      
+    }
+  },
+ 
+  os_rina_rani: {
+    name: "রিনা রানী দাস",
+    post: " আয়া ",
+    img: "images/teachers/profile.png",
+    info: {
+     "পিতার নাম": " ",
+      "মাতার নাম": "  ",
+      "জন্ম তারিখ": "   ",
+      "জাতীয় পরিচয়পত্র": " ",
+      "শিক্ষাগত যোগ্যতা": " অষ্টম শ্রেণী ",
+      "যোগদানের তারিখ": " 2019-01-01 (YY-MM-DD)",
+      "মোবাইল": "",
+      "ইমেল": " "
+      
+    }
+  }
+
+
+};
+
+
+function calculateExperience(joinDate) {
+  const start = new Date(joinDate);
+  const today = new Date();
+
+  let years = today.getFullYear() - start.getFullYear();
+  let months = today.getMonth() - start.getMonth();
+  let days = today.getDate() - start.getDate();
+
+  // দিন নেগেটিভ হলে
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+
+  // মাস নেগেটিভ হলে
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return years + "  বছর, " + months + "  মাস, " + days + "  দিন";
+}
+
+
+
+
+window.openProfile = function(id){
+  const teacher = teachers[id];
+  const modal = document.getElementById("profileModal");
+  modal.style.display = "block";
+
+  document.getElementById("pName").innerText = teacher.name;
+  document.getElementById("pPost").innerText = teacher.post;
+  document.getElementById("pImg").src = teacher.img;
+
+  let table = "<table class='profile-table'>";
+  for (let key in teacher.info){
+    table += `<tr><td>${key}</td><td>${teacher.info[key]}</td></tr>`;
+  }
+  const joinDate = teacher.info["যোগদানের তারিখ"];
+  if (joinDate){
+    table += `<tr><td>চাকরির অভিজ্ঞতা</td><td>${calculateExperience(joinDate)}</td></tr>`;
+  }
+  table += "</table>";
+  document.getElementById("pDetails").innerHTML = table;
+}
+
+window.closeProfile = function(){
+  document.getElementById("profileModal").style.display = "none";
+}
+
+
+
+
+
 
 
 
