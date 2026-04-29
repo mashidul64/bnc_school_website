@@ -2,12 +2,12 @@
 <html lang="bn">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
 
   <title>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</title>
   <meta name="description" content="Example School - বিদ্যালয় ওয়েবসাইট" />
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -31,7 +31,9 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
 	
-
+	
+	
+	
 
 
 
@@ -92,21 +94,23 @@
 /* স্লাইডার অপশন শুরু========== */
 
 /* ====== স্লাইডার ইমেজ ====== */	
-	section {
-		min-height: 50vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 0;   /* ❗ এখানে padding থাকবে না */
-		}
+	/* ======= Section & Slider ======= */
+section {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0; /* no padding */
+}
 
-.top-slider{
+.top-slider {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 80vh; /* Desktop default */
   overflow: hidden;
 }
-.top-slider img{
+
+.top-slider img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -116,12 +120,12 @@
   transition: opacity 1s ease-in-out;
 }
 
-.top-slider img.active{
+.top-slider img.active {
   opacity: 1;
 }
 
 /* dots indicator */
-.dots{
+.dots {
   position: absolute;
   bottom: 15px;
   left: 50%;
@@ -130,66 +134,124 @@
   gap: 8px;
 }
 
-.dots span{
+.dots span {
   width: 10px;
   height: 10px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s, background 0.3s;
 }
 
-.dots span.active{
+.dots span.active {
   background: #008000;
   transform: scale(1.4);
 }
 
 /* Dark overlay effect */
-.top-slider::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.45);
-  z-index:1;
+.top-slider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+/* Hero overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Desktop default */
   margin-top: 30px;
-  text-align:left;
-  color:#fff;
-  padding:20px;
+  text-align: left;
+  color: #fff;
+  padding: 20px;
 }
 
-.hero-overlay h1{
+.hero-overlay h1 {
   font-size: clamp(26px, 4vw, 44px);
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
-.hero-overlay p{
+.hero-overlay p {
   font-size: 18px;
-  margin-bottom:18px;
-  opacity:0.9;
+  margin-bottom: 18px;
+  opacity: 0.9;
 }
 
-.hero-btn{
-  display:inline-block;
-  padding:12px 26px;
+.hero-btn {
+  display: inline-block;
+  padding: 12px 26px;
   background: var(--accent);
-  color:#111;
-  font-weight:700;
-  border-radius:30px;
+  color: #111;
+  font-weight: 700;
+  border-radius: 30px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hero-btn:hover{
+.hero-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ======= Responsive for Mobile ======= */
+
+@media(max-width:600px){
+  .top-slider{
+    height:60vh;
+    overflow: visible;
+  }
+
+  .hero-overlay{
+    margin-top:15px;
+    align-items:center;
+    text-align:center;
+    padding:10px;
+  }
+
+  .hero-overlay h1{
+    font-size:24px;
+  }
+
+  .hero-overlay p{
+    font-size:14px;
+  }
+}
+
+/* ======= Optional Tablet Adjustments ======= */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .top-slider {
+    height: 70vh;
+  }
+
+  .hero-overlay {
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(24px, 3.5vw, 38px);
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    padding: 11px 24px;
+    font-size: 15px;
+  }
+
+  .dots span {
+    width: 9px;
+    height: 9px;
+  }
 }
 /* স্লাইডার অপশন শেষ========== */
 
@@ -1136,14 +1198,16 @@ select {
 	
 /* ====== ফুটার সেকশন শুরু  ====== */  	
 	
-
 .school-footer {
     background-color: #081342;
     padding: 40px 20px 20px;
     font-family: 'Arial', sans-serif;
     border-top: 1px solid #fff;
     color: #fbfbfb;
+    width: flex;
 }
+
+
 
 .footer-logo {
     width: 80px; /* আপনার পছন্দমতো সাইজ দিন */
@@ -1227,7 +1291,85 @@ select {
     border-top: 1px solid #ffffff;
     font-size: 13px;
 }
-	
+
+
+
+
+/* অনুদান পপআপ সেকসন শুরু*/
+
+.donation-box {
+  position: fixed;
+  bottom: -300px;
+  left: 20px;
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.5s ease;
+  z-index: 9999;
+  font-family: Arial;
+}
+
+.donation-box.show {
+  bottom: 20px;
+}
+
+.header {
+  background: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+#closeBtn {
+  cursor: pointer;
+}
+
+.body {
+  padding: 12px;
+  font-size: 13px;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+.donateBtn {
+    color: #111;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+	bottom: 20px;
+	right: 20px;
+	background: red;
+	color: #fff;
+	padding: 12px 18px;
+	border-radius: 30px;
+	text-decoration: none;
+	z-index: 999;
+}
+
+
+
+/* অনুদান পপআপ সেকসন শেষ*/	
 	
 	
 	
@@ -1273,15 +1415,19 @@ select {
           <li><a href="#admission">Admission</a></li>
           <li><a href="#gallery2">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
+          
         </ul>
       </nav>
       <a class="cta" href="#admission">Apply Now</a>
+	  
+	  <a href="donation.html" target="_blank" class="donateBtn">Donate Now</a>
     </div>
   </header>
   
     
   <!-- TOP SLIDER -->
 <section id="slides">
+
 <section class="top-slider">
   <div class="slides">
     <img src="images/slider14.jpg" class="active">
@@ -1310,7 +1456,7 @@ select {
    <!-- HERO CONTENT -->
   <div class="hero-overlay">
     <h1>বাইন্যাছোলা মানিকপুর উচ্চ বিদ্যালয়</h1>
-    <p>জ্ঞান • চরিত্র • সেবা</p>
+    <p>শিক্ষার জন্য এসো • সেবার জন্য বেরিয়ে যাও</p>
     <a href="#admission" class="hero-btn">ভর্তি চলছে</a>
   </div>
   
@@ -1441,7 +1587,7 @@ select {
       <div class="profile">
         <img src="images/head_teacher.png" alt="Principal" class="card-img">
         <div>
-		 <h2 style=" font-size:110%; white-space:nowrap; display:inline-flex; align-items:baseline;"> মোঃ নাজমুল হুদা (নিবিড়) <span style="font-size:80%; font-weight:bold; margin-left:4px;"> </span></h2>
+		 <h2 style=" font-size:110%; white-space:nowrap; display:inline-flex; align-items:baseline;"> নাজমুল এইচ নিবিড় <span style="font-size:80%; font-weight:bold; margin-left:4px;"> </span></h2>
           
           <span>প্রধান শিক্ষক</span>
         </div>
@@ -1468,7 +1614,7 @@ select {
 	<div class="teacher-card" onclick="openProfile('nibir')">
   <img src="images/teachers/t_nibir.png">
   <div class="teacher-info">
-    <strong>মোঃ নাজমুল হুদা (নিবিড়)</strong>
+    <strong>নাজমুল এইচ নিবিড়</strong>
     <div>প্রধান শিক্ষক</div>
   </div>
 </div>
@@ -1526,7 +1672,7 @@ select {
 <div class="teacher-card" onclick="openProfile('nipon')">
   <img src="images/teachers/t_nipon.png">
   <div class="teacher-info">
-    <strong>নিপন চাকামা</strong>
+    <strong>নিপন চাকমা</strong>
     <div>গনিত শিক্ষক</div>
   </div>
 </div>
@@ -2024,8 +2170,28 @@ select {
     </div>
   </div>
   
- 
- 
+<!-- অনুদান পপআপ মেসেজ শুরু এখান থেকে --> 
+
+
+<div id="donationBox" class="donation-box">
+  <div class="header">
+    <span>📢 Donation</span>
+    <span id="closeBtn">&times;</span>
+  </div>
+  <div class="body">
+    <p>
+      পাহাড়ি অঞ্চলের অনেক শিক্ষার্থীদের দূর দুরান্ত থেকে হেঁটে স্কুলে আসতে হয়।
+      তাদের সহায়তায় আপনার সামান্য অনুদান বড় পরিবর্তন আনতে পারে।
+    </p>
+   
+	<a href="donation.html" target="_blank" class="btn">Donate Now</a>
+  </div>
+</div>
+
+<!-- Sound -->
+<audio id="notifySound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+
  
  
  
@@ -2424,7 +2590,7 @@ document.addEventListener('keydown', e=>{
 const teachers = {
 
   nibir: {
-    name: "মোঃ নাজমুল হুদা (নিবিড়)",
+    name: "নাজমুল এইচ নিবিড়",
     post: "প্রধান শিক্ষক",
     img: "images/teachers/t_nibir.png",
     info: {
@@ -2720,7 +2886,51 @@ window.closeProfile = function(){
 }
 
 
+// অনুদার পপআপ কন্ট্রোল এখানে=========================
 
+const box = document.getElementById("donationBox");
+const closeBtn = document.getElementById("closeBtn");
+const sound = document.getElementById("notifySound");
+
+// কত সময় পর আবার আসবে (মিলিসেকেন্ড)
+// এখানে 1 মিনিট = 60000 ms (তুমি চাইলে 5 মিনিট = 300000 করতে পারো)
+const delayAfterClose = 60000; 
+
+function canShow() {
+  const lastClosed = localStorage.getItem("donationClosedTime");
+  if (!lastClosed) return true;
+
+  const now = new Date().getTime();
+  return (now - lastClosed) > delayAfterClose;
+}
+
+function showBox() {
+  if (!canShow()) return;
+
+  box.classList.add("show");
+
+  // sound play
+  sound.play().catch(()=>{});
+
+  // ২০ সেকেন্ড পরে লুকাবে
+  setTimeout(() => {
+    box.classList.remove("show");
+  }, 20000);
+}
+
+// প্রথমবার ৫ সেকেন্ড পরে
+setTimeout(showBox, 5000);
+
+// প্রতি ৩০ সেকেন্ডে চেক করবে
+setInterval(showBox, 60000);
+
+// ❌ Close Button
+closeBtn.onclick = () => {
+  box.classList.remove("show");
+
+  // সময় সেভ করবে
+  localStorage.setItem("donationClosedTime", new Date().getTime());
+};
 
 
 
