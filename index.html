@@ -269,14 +269,17 @@ section {
   background: #fff7ed;
   border: 1px solid #0000ff;
   overflow: hidden;
+  height: 80px;
 }
 
 .notice-label {
   background: #0c6df1;
   color: white;
   font-weight: bold;
+  font-size:30px;
   padding: 12px 18px;
   white-space: nowrap;
+  height: 80px;
 }
 
 .notice-track {
@@ -294,6 +297,7 @@ section {
 .notice-move a {
   margin-right: 40px;
   text-decoration: none;
+  font-size: 30px;
   color: #000000;
   font-weight: 600;
 }
@@ -1301,12 +1305,12 @@ select {
   position: fixed;
   bottom: -300px;
   left: 20px;
-  width: 280px;
+  width: 540px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: all 0.5s ease;
-  z-index: 9999;
+  
   font-family: Arial;
 }
 
@@ -1347,25 +1351,6 @@ select {
 
 
 
-
-
-
-
-
-.donateBtn {
-    color: #111;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-weight: 700;
-	bottom: 20px;
-	right: 20px;
-	background: red;
-	color: #fff;
-	padding: 12px 18px;
-	border-radius: 30px;
-	text-decoration: none;
-	z-index: 999;
-}
 
 
 
@@ -1420,7 +1405,7 @@ select {
       </nav>
       <a class="cta" href="#admission">Apply Now</a>
 	  
-	  <a href="donation.html" target="_blank" class="donateBtn">Donate Now</a>
+	
     </div>
   </header>
   
@@ -2175,16 +2160,15 @@ select {
 
 <div id="donationBox" class="donation-box">
   <div class="header">
-    <span>📢 Donation</span>
+    <span>📢 Notice </span>
     <span id="closeBtn">&times;</span>
   </div>
   <div class="body">
     <p>
-      পাহাড়ি অঞ্চলের অনেক শিক্ষার্থীদের দূর দুরান্ত থেকে হেঁটে স্কুলে আসতে হয়।
-      তাদের সহায়তায় আপনার সামান্য অনুদান বড় পরিবর্তন আনতে পারে।
+      <b>পাহাড়ি অঞ্চলে এই বিদ্যালয়ের অনেক শিক্ষার্থীকে প্রতিদিন দূর-দুরান্ত থেকে দীর্ঘ পথ পায়ে হেঁটে বিদ্যালয়ে আসতে হয়। এই কষ্টসাধ্য যাত্রা তাদের শিক্ষার পথে বড় প্রতিবন্ধকতা হয়ে দাড়ায়। <br><br> শিক্ষার্থীদের জন্য নিরাপদ ও সহজ যাতায়াতের ব্যবস্থা করতে আপনাদের সবার আন্তরিক সহোযোগিতা ও প্রনোদনা একান্তভাবে কাম্য।</b>
     </p>
    
-	<a href="donation.html" target="_blank" class="btn">Donate Now</a>
+	
   </div>
 </div>
 
@@ -2193,7 +2177,8 @@ select {
 
 
  
- 
+
+      
  
  
  
@@ -2915,7 +2900,7 @@ function showBox() {
   // ২০ সেকেন্ড পরে লুকাবে
   setTimeout(() => {
     box.classList.remove("show");
-  }, 20000);
+  }, 60000);
 }
 
 // প্রথমবার ৫ সেকেন্ড পরে
