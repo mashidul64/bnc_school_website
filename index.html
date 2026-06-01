@@ -47,10 +47,24 @@
 		background: linear-gradient(90deg, var(--primary), #3aa0ff);
 	}
 	
-    header{background:linear-gradient(90deg,var(--primary),#3aa0ff);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:50;box-shadow:0 4px 12px rgba(11,108,240,0.08)}
+   
+	header {
+    background: linear-gradient(90deg, #004a77, #3aa0ff);
+    color: #fff;
+    padding: 14px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(11, 108, 240, 0.08);
+}
+	
+	
+
 	
  /* ====== Main Container ====== */	
-    .container{max-width:1400px;margin:0 auto;padding:0 16px}
+ 
+ 
+    .container{max-width:90%;margin:0 auto;padding:0 16px}
     
 	
     .nav{display:flex;align-items:center;gap:12px}
@@ -68,7 +82,11 @@
 		width: 100%;
 		z-index: 2000;
 		}
-
+		
+		
+		
+		
+		
 	nav ul li a {
 		transition: color 0.3s, background 0.3s; /* smooth effect */
 		padding: 3px 3px;
@@ -93,10 +111,13 @@
 
 /* স্লাইডার অপশন শুরু========== */
 
+
+
 /* ====== স্লাইডার ইমেজ ====== */	
+
 	/* ======= Section & Slider ======= */
 section {
-  min-height: 50vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,7 +186,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Desktop default */
-  margin-top: 30px;
+  margin-top: 60px;
   text-align: left;
   color: #fff;
   padding: 20px;
@@ -197,62 +218,6 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* ======= Responsive for Mobile ======= */
-
-@media(max-width:600px){
-  .top-slider{
-    height:60vh;
-    overflow: visible;
-  }
-
-  .hero-overlay{
-    margin-top:15px;
-    align-items:center;
-    text-align:center;
-    padding:10px;
-  }
-
-  .hero-overlay h1{
-    font-size:24px;
-  }
-
-  .hero-overlay p{
-    font-size:14px;
-  }
-}
-
-/* ======= Optional Tablet Adjustments ======= */
-@media (min-width: 601px) and (max-width: 1024px) {
-
-  .top-slider {
-    height: 70vh;
-  }
-
-  .hero-overlay {
-    padding: 15px;
-    margin-top: 20px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .hero-overlay h1 {
-    font-size: clamp(24px, 3.5vw, 38px);
-  }
-
-  .hero-overlay p {
-    font-size: 16px;
-  }
-
-  .hero-btn {
-    padding: 11px 24px;
-    font-size: 15px;
-  }
-
-  .dots span {
-    width: 9px;
-    height: 9px;
-  }
-}
 /* স্লাইডার অপশন শেষ========== */
 
 
@@ -321,10 +286,22 @@ section {
 
 
 /* ====== Welcome section ====== */
-	.welcome-box{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85)); padding:22px;border-radius:16px; box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+
+.welcome-section {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  margin-top:20px;
+  box-shadow: 0 6px 18px rgba(12,24,48,0.06);
+  text-align: left; /* ছবির নিচের লেখা সেন্টারে */
+}
+
+
+
+	.welcome-box{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85)); padding:32px;border-radius:16px; box-shadow:0 8px 24px rgba(2,6,23,0.06)}
 	
     .welcome{padding:40px 0;display:grid;grid-template-columns:1fr 520px;gap:20px;align-items:top}
-    .welcome h1{font-size:40px; margin:0 0 10px;text-align:center}
+    .welcome h1{font-size:50px; margin:0 0 10px;text-align:center}
     .welcome p{color:var(--muted);margin:0 0 16px; text-align:center}
 	
 	
@@ -346,7 +323,7 @@ section {
 }
 
 .stat i{
-  font-size:35px;
+  font-size:55px;
   color:#2c3e50;
   margin-bottom:10px;
   display:block;
@@ -396,12 +373,6 @@ section {
  
 }
 
-
-
-
-
-
-
 /* আমাদের সাফল্য ========== */		
 	.cards {
   display: grid;
@@ -419,7 +390,7 @@ section {
 
 .student-img {
   width: 100%;
-  height: 300px; /* ছবি চাইলে adjust করা যাবে */
+  height: 500px; /* ছবি চাইলে adjust করা যাবে */
   object-fit: cover;
   border-radius: 30px;
   margin-bottom: 0px;
@@ -437,7 +408,11 @@ section {
 	
 /* About Section Start ইতিহাস/ মিশন/ সেকশন ========== */
 
-.aboutContainer{max-width:1300px;margin:0 auto;padding:0 16px}
+.aboutContainer{
+	max-width:100%;
+	margin:0 auto;
+	padding:0 16px;
+	}
 
 	.page-section {
 		transform: translateY(40px);
@@ -1176,27 +1151,7 @@ select {
 
 
 
-/* ====== টপ বেক বাটন শুরু  ====== */  
 
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 50px;
-  font-size: 14px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-#backToTop:hover {
-  transform: translateY(-3px);
-}
 
 	
 	
@@ -1349,13 +1304,146 @@ select {
   font-size: 13px;
 }
 
-
-
-
-
-
 /* অনুদান পপআপ সেকসন শেষ*/	
-	
+
+
+
+
+
+
+/* ====== টপ বেক বাটন শুরু  ====== */  
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  z-index:99999;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+
+
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+}
+
+#slides{
+  width:100vw !important;
+  max-width:100vw !important;
+  padding:0 !important;
+  margin:0 !important;
+  display:block !important;
+}
+
+.top-slider{
+  width:100vw !important;
+  max-width:100vw !important;
+  height:60vh;
+  margin:0 !important;
+  padding:0 !important;
+  display:block !important;
+  overflow:hidden;
+}
+
+.top-slider img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover;
+  object-position:center;
+}
+
+@media (max-width:768px){
+  #slides{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+  }
+
+  .top-slider{
+    height:420px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:25px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .nav{
+    position:relative;
+  }
+
+  .menu-toggle{
+    display:block;
+    margin-left:auto;
+  }
+
+  nav .nav-menu{
+    display:none !important;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#0077c8;
+    flex-direction:column;
+    padding:10px 0;
+    z-index:9999;
+  }
+
+  nav .nav-menu.active{
+    display:flex !important;
+  }
+
+  nav .nav-menu li{
+    list-style:none;
+    text-align:center;
+  }
+
+  nav .nav-menu a{
+    display:block;
+    padding:8px;
+    color:white;
+    text-decoration:none;
+  }
+}
+
+
+
+
+
+
+
+
+
 	
 	
 	
@@ -1363,11 +1451,17 @@ select {
 	
 	
   </style>
-
-<!-- CSS 
-  <link rel="stylesheet" href="css/gallery2.css">
-  -->
+  
+  
+  
+  
 </head>
+
+
+
+
+
+
 
 
 <body>
@@ -1380,6 +1474,7 @@ select {
 
 <!-- Main Heading -->
   <header>
+  
     <div class="container nav">
       <div class="brand">
         <div class="logo">
@@ -1391,6 +1486,25 @@ select {
           <small style="color:rgba(255,255,255,0.9)">Knowledge, Character, Service</small>
         </div>
       </div>
+	  
+	 
+	  
+	  
+	  <nav aria-label="Main navigation">
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#slides">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#teachers">Teacher</a></li>
+    <li><a href="#academic">Academic</a></li>
+    <li><a href="#admission">Admission</a></li>
+    <li><a href="#gallery2">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+	  
+	  
+	  
+<!-- Main Heading 	  
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="#slides">Home</a></li>
@@ -1403,11 +1517,19 @@ select {
           
         </ul>
       </nav>
-      <a class="cta" href="#admission">Apply Now</a>
 	  
+	  -->
+	  
+	  
+	  
+      <a class="cta" href="#admission">Apply Now</a>
+	   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 	
     </div>
   </header>
+  
+  
+  
   
     
   <!-- TOP SLIDER -->
@@ -1469,10 +1591,8 @@ select {
 <!-- Main Design Section -->
   <main class="container" id="home">
   
-  
-  
 <!-- Welcome Section --> 
-    <section class="welcome">
+    <section class="welcome-section">
       <div class="welcome-box">
 	  
 	  
@@ -1586,6 +1706,7 @@ select {
 		</div>			
 	</div>		
 </div>
+
 </div>
 </section>
 </main>
@@ -2196,7 +2317,9 @@ select {
 <!-- Java Script শুরু এখান থেকে -->
   <script>
   
-  
+  function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
   
 // স্টুডেন্ট কাউন্টার===================
     
@@ -2930,6 +3053,7 @@ closeBtn.onclick = () => {
 
 
 
+</script>
 
 
 
